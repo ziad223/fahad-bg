@@ -24,7 +24,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -40,7 +40,8 @@
             font-family: 'Inter', 'Cairo', system-ui, sans-serif;
             background: #FAF8F5;
             overflow-x: hidden;
-            color: #1c1917; /* Warm dark gray text */
+            color: #1c1917;
+            /* Warm dark gray text */
         }
 
         .container-custom {
@@ -78,7 +79,8 @@
             transform: translateX(-50%);
             width: 0;
             height: 3px;
-            background-color: #D97706; /* Amber */
+            background-color: #D97706;
+            /* Amber */
             border-radius: 4px;
             transition: width 0.3s ease;
         }
@@ -96,26 +98,30 @@
             font-size: 2.25rem;
             font-weight: 700;
             line-height: 1.15;
-            color: #064E3B; /* Deep Forest Green */
+            color: #064E3B;
+            /* Deep Forest Green */
         }
 
         .section-label {
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 2.5px;
-            color: #D97706; /* Warm Gold */
+            color: #D97706;
+            /* Warm Gold */
         }
 
         .premium-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #F0EBE1;
             background: white;
-            border-radius: 1.5rem; /* softer corners */
+            border-radius: 1.5rem;
+            /* softer corners */
         }
 
         .premium-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 30px -5px rgba(6, 78, 59, 0.08); /* soft green shadow */
+            box-shadow: 0 15px 30px -5px rgba(6, 78, 59, 0.08);
+            /* soft green shadow */
             border-color: rgba(217, 119, 6, 0.4);
         }
 
@@ -165,7 +171,7 @@
             justify-content: center;
             color: #064E3B;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .slider-arrow:hover {
@@ -221,7 +227,8 @@
         .play-btn {
             width: 56px;
             height: 56px;
-            background: #D97706; /* Warm Gold */
+            background: #D97706;
+            /* Warm Gold */
             border-radius: 9999px;
             display: flex;
             align-items: center;
@@ -237,7 +244,7 @@
             transform: scale(1.1);
             box-shadow: 0 0 20px rgba(217, 119, 6, 0.5);
         }
-        
+
         .reel-info {
             position: absolute;
             bottom: 0;
@@ -246,21 +253,23 @@
             padding: 24px 20px;
             z-index: 11;
             color: white;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
             transform: translateY(20px);
             opacity: 0;
             transition: all 0.4s ease;
         }
+
         .reel-card:hover .reel-info {
             transform: translateY(0);
             opacity: 1;
         }
+
         .social-badge {
             position: absolute;
             top: 20px;
             right: 20px;
             z-index: 11;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             color: white;
             padding: 6px 14px;
@@ -269,9 +278,10 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-weight: 600;
         }
+
         html[dir="rtl"] .social-badge {
             right: auto;
             left: 20px;
@@ -404,28 +414,44 @@
 
         /* News Ticker */
         @keyframes ticker-ltr {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
+
         @keyframes ticker-rtl {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(50%);
+            }
         }
+
         .ticker-track {
             display: flex;
             width: max-content;
             animation: ticker-ltr 45s linear infinite;
         }
+
         html[dir="rtl"] .ticker-track {
             animation: ticker-rtl 45s linear infinite;
         }
+
         .ticker-track:hover {
             animation-play-state: paused;
         }
+
         .news-badge {
             position: relative;
             background-color: #B8860B;
         }
+
         .news-badge::after {
             content: '';
             position: absolute;
@@ -435,10 +461,12 @@
             background-color: inherit;
             z-index: 20;
         }
+
         html[dir="rtl"] .news-badge::after {
             left: -14px;
             clip-path: polygon(100% 0, 100% 100%, 0 50%);
         }
+
         html[dir="ltr"] .news-badge::after {
             right: -14px;
             clip-path: polygon(0 0, 0 100%, 100% 50%);
@@ -462,50 +490,74 @@
     <!-- NAVIGATION -->
     <nav class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
         <!-- NEWS TICKER -->
-        <div class="bg-[#064E3B] text-white/95 border-b border-white/10 relative flex items-center overflow-hidden h-10 text-xs md:text-sm">
-            <div class="news-badge h-full flex items-center px-4 md:px-6 font-bold z-20 shadow-[5px_0_15px_rgba(0,0,0,0.5)] flex-shrink-0">
+        <div
+            class="bg-[#064E3B] text-white/95 border-b border-white/10 relative flex items-center overflow-hidden h-10 text-xs md:text-sm">
+            <div
+                class="news-badge h-full flex items-center px-4 md:px-6 font-bold z-20 shadow-[5px_0_15px_rgba(0,0,0,0.5)] flex-shrink-0">
                 <i class="fas fa-bolt text-amber-300 " style="margin: 0 8px;"></i>
                 <span data-ar="أخبار الفهاد" data-en="Fahad News">أخبار الفهاد</span>
             </div>
-            
+
             <div class="flex-grow overflow-hidden relative h-full flex items-center">
                 <div class="ticker-track">
                     <!-- Set 1 -->
                     <div class="flex items-center gap-12 flex-shrink-0" style="padding-inline-end: 3rem;">
                         <div class="flex items-center gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
-                            <span data-ar="شركة الفهاد تشارك بقوة في معرض الخليج للأغذية (جلفود) القادم - ترقبوا أحدث منتجاتنا!" data-en="Fahad Foods participates strongly in the upcoming Gulfood Exhibition - Stay tuned for our latest products!">شركة الفهاد تشارك بقوة في معرض الخليج للأغذية (جلفود) القادم - ترقبوا أحدث منتجاتنا!</span>
+                            <span
+                                data-ar="شركة الفهاد تشارك بقوة في معرض الخليج للأغذية (جلفود) القادم - ترقبوا أحدث منتجاتنا!"
+                                data-en="Fahad Foods participates strongly in the upcoming Gulfood Exhibition - Stay tuned for our latest products!">شركة
+                                الفهاد تشارك بقوة في معرض الخليج للأغذية (جلفود) القادم - ترقبوا أحدث منتجاتنا!</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
-                            <span data-ar="افتتاح وكالة جديدة لمنتجات الفهاد وأروى في المنطقة الجنوبية لخدمتكم بشكل أفضل وأسرع." data-en="Opening of a new agency for Fahad and Arwa products in the southern region to serve you better and faster.">افتتاح وكالة جديدة لمنتجات الفهاد وأروى في المنطقة الجنوبية لخدمتكم بشكل أفضل وأسرع.</span>
+                            <span
+                                data-ar="افتتاح مركز جديد لمنتجات الفهاد وأروى في المنطقة الجنوبية لخدمتكم بشكل أفضل وأسرع."
+                                data-en="Opening of a new center for Fahad and Arwa products in the southern region to serve you better and faster.">افتتاح
+                                مركز جديد لمنتجات الفهاد وأروى في المنطقة الجنوبية لخدمتكم بشكل أفضل وأسرع.</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
-                            <span data-ar="إطلاق خط إنتاج جديد للأجبان الفاخرة لتلبية كافة احتياجات السوق المحلي والدولي." data-en="Launching a new production line for premium cheeses to meet all local and international market needs.">إطلاق خط إنتاج جديد للأجبان الفاخرة لتلبية كافة احتياجات السوق المحلي والدولي.</span>
+                            <span
+                                data-ar="إطلاق خط إنتاج جديد للأجبان الفاخرة لتلبية كافة احتياجات السوق المحلي والدولي."
+                                data-en="Launching a new production line for premium cheeses to meet all local and international market needs.">إطلاق
+                                خط إنتاج جديد للأجبان الفاخرة لتلبية كافة احتياجات السوق المحلي والدولي.</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
-                            <span data-ar="عروض حصرية وخصومات خاصة قادمة لعملائنا بمناسبة مرور 25 عاماً على التأسيس." data-en="Exclusive offers and special discounts coming up for our customers on our 25th anniversary.">عروض حصرية وخصومات خاصة قادمة لعملائنا بمناسبة مرور 25 عاماً على التأسيس.</span>
+                            <span data-ar="عروض حصرية وخصومات خاصة قادمة لعملائنا بمناسبة مرور 25 عاماً على التأسيس."
+                                data-en="Exclusive offers and special discounts coming up for our customers on our 25th anniversary.">عروض
+                                حصرية وخصومات خاصة قادمة لعملائنا بمناسبة مرور 25 عاماً على التأسيس.</span>
                         </div>
                     </div>
                     <!-- Set 2 -->
                     <div class="flex items-center gap-12 flex-shrink-0" style="padding-inline-end: 3rem;">
                         <div class="flex items-center gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
-                            <span data-ar="شركة الفهاد تشارك بقوة في معرض الخليج للأغذية (جلفود) القادم - ترقبوا أحدث منتجاتنا!" data-en="Fahad Foods participates strongly in the upcoming Gulfood Exhibition - Stay tuned for our latest products!">شركة الفهاد تشارك بقوة في معرض الخليج للأغذية (جلفود) القادم - ترقبوا أحدث منتجاتنا!</span>
+                            <span
+                                data-ar="شركة الفهاد تشارك بقوة في معرض الخليج للأغذية (جلفود) القادم - ترقبوا أحدث منتجاتنا!"
+                                data-en="Fahad Foods participates strongly in the upcoming Gulfood Exhibition - Stay tuned for our latest products!">شركة
+                                الفهاد تشارك بقوة في معرض الخليج للأغذية (جلفود) القادم - ترقبوا أحدث منتجاتنا!</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
-                            <span data-ar="افتتاح وكالة جديدة لمنتجات الفهاد وأروى في المنطقة الجنوبية لخدمتكم بشكل أفضل وأسرع." data-en="Opening of a new agency for Fahad and Arwa products in the southern region to serve you better and faster.">افتتاح وكالة جديدة لمنتجات الفهاد وأروى في المنطقة الجنوبية لخدمتكم بشكل أفضل وأسرع.</span>
+                            <span
+                                data-ar="افتتاح مركز جديد لمنتجات الفهاد وأروى في المنطقة الجنوبية لخدمتكم بشكل أفضل وأسرع."
+                                data-en="Opening of a new center for Fahad and Arwa products in the southern region to serve you better and faster.">افتتاح
+                                مركز جديد لمنتجات الفهاد وأروى في المنطقة الجنوبية لخدمتكم بشكل أفضل وأسرع.</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
-                            <span data-ar="إطلاق خط إنتاج جديد للأجبان الفاخرة لتلبية كافة احتياجات السوق المحلي والدولي." data-en="Launching a new production line for premium cheeses to meet all local and international market needs.">إطلاق خط إنتاج جديد للأجبان الفاخرة لتلبية كافة احتياجات السوق المحلي والدولي.</span>
+                            <span
+                                data-ar="إطلاق خط إنتاج جديد للأجبان الفاخرة لتلبية كافة احتياجات السوق المحلي والدولي."
+                                data-en="Launching a new production line for premium cheeses to meet all local and international market needs.">إطلاق
+                                خط إنتاج جديد للأجبان الفاخرة لتلبية كافة احتياجات السوق المحلي والدولي.</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
-                            <span data-ar="عروض حصرية وخصومات خاصة قادمة لعملائنا بمناسبة مرور 25 عاماً على التأسيس." data-en="Exclusive offers and special discounts coming up for our customers on our 25th anniversary.">عروض حصرية وخصومات خاصة قادمة لعملائنا بمناسبة مرور 25 عاماً على التأسيس.</span>
+                            <span data-ar="عروض حصرية وخصومات خاصة قادمة لعملائنا بمناسبة مرور 25 عاماً على التأسيس."
+                                data-en="Exclusive offers and special discounts coming up for our customers on our 25th anniversary.">عروض
+                                حصرية وخصومات خاصة قادمة لعملائنا بمناسبة مرور 25 عاماً على التأسيس.</span>
                         </div>
                     </div>
                 </div>
@@ -514,47 +566,48 @@
 
         <div class="bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
             <div class="container-custom">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-4">
-                    <a href="#home" class="flex items-center gap-3 cursor-pointer">
-                        <img src="./images/fahad-logo.jpeg" alt="Fahad" class="h-10 w-auto rounded-xl transition-transform hover:scale-105">
-                    </a>
-                </div>
-
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <a href="#home" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="الرئيسية"
-                        data-en="Home">الرئيسية</a>
-                    <a href="#about" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="من نحن"
-                        data-en="About Us">من نحن</a>
-                    <a href="#products" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="المنتجات"
-                        data-en="Products">المنتجات</a>
-                    <a href="#gallery" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="المعرض"
-                        data-en="Gallery">المعرض</a>
-                    <a href="#reels" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="الريلز"
-                        data-en="Reels">الريلز</a>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <div class="hidden md:flex items-center bg-slate-200 rounded-full p-1 text-xs font-semibold">
-                        <button onclick="switchLanguage('ar')" id="btn-ar"
-                            class="lang-btn active px-4 py-1.5 rounded-full text-xs">AR</button>
-                        <button onclick="switchLanguage('en')" id="btn-en"
-                            class="lang-btn px-4 py-1.5 rounded-full text-xs text-slate-600">EN</button>
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center gap-4">
+                        <a href="#home" class="flex items-center gap-3 cursor-pointer">
+                            <img src="./images/fahad-logo.jpeg" alt="Fahad"
+                                class="h-10 w-auto rounded-xl transition-transform hover:scale-105">
+                        </a>
                     </div>
 
-                    <a href="#contact"
-                        class="hidden md:flex items-center gap-2 bg-[#D97706] hover:bg-[#b45309] text-white px-6 py-2.5 rounded-2xl text-sm font-bold transition">
-                        <i class="fas fa-phone text-sm"></i>
-                        <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
-                    </a>
+                    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                        <a href="#home" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="الرئيسية"
+                            data-en="Home">الرئيسية</a>
+                        <a href="#about" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="من نحن"
+                            data-en="About Us">من نحن</a>
+                        <a href="#products" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="المنتجات"
+                            data-en="Products">المنتجات</a>
+                        <a href="#gallery" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="المعرض"
+                            data-en="Gallery">المعرض</a>
+                        <a href="#reels" class="nav-link text-stone-600 hover:text-[#D97706]" data-ar="الريلز"
+                            data-en="Reels">الريلز</a>
+                    </div>
 
-                    <button onclick="toggleMobile()"
-                        class="md:hidden w-10 h-10 flex items-center justify-center text-xl">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                    <div class="flex items-center gap-3">
+                        <div class="hidden md:flex items-center bg-slate-200 rounded-full p-1 text-xs font-semibold">
+                            <button onclick="switchLanguage('ar')" id="btn-ar"
+                                class="lang-btn active px-4 py-1.5 rounded-full text-xs">AR</button>
+                            <button onclick="switchLanguage('en')" id="btn-en"
+                                class="lang-btn px-4 py-1.5 rounded-full text-xs text-slate-600">EN</button>
+                        </div>
+
+                        <a href="#contact"
+                            class="hidden md:flex items-center gap-2 bg-[#D97706] hover:bg-[#b45309] text-white px-6 py-2.5 rounded-2xl text-sm font-bold transition">
+                            <i class="fas fa-phone text-sm"></i>
+                            <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+                        </a>
+
+                        <button onclick="toggleMobile()"
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-xl">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
     </nav>
 
     <!-- Mobile Menu -->
@@ -578,591 +631,699 @@
 
     <!-- MAIN PAGE VIEW -->
     <div id="mainPageView">
-    <!-- HERO -->
-    <section id="home" class="relative pt-32 min-h-[100dvh] flex items-center text-white overflow-hidden">
-        <!-- Video Background -->
-        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-            <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4">
-        </video>
-        <!-- Overlay -->
-        <div class="absolute inset-0 hero-overlay z-10"></div>
-        
-        <div class="container-custom relative z-20">
-            <div class="max-w-3xl mx-auto text-center">
-                <div
-                    class="inline-flex items-center gap-2 glass-panel px-5 py-2 rounded-full mb-6 text-sm font-medium">
-                    <div class="w-2 h-2 bg-emerald-400 rounded-full "></div>
-                    <span data-ar="منذ 25 عاماً من التميز • سوريا" data-en="25 Years of Excellence • Syria">منذ 25 عاماً
-                        من التميز • سوريا</span>
+        <!-- HERO -->
+        <section id="home" class="relative pt-32 min-h-[100dvh] flex items-center text-white overflow-hidden">
+            <!-- Video Background -->
+            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4"
+                    type="video/mp4">
+            </video>
+            <!-- Overlay -->
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+
+            <div class="container-custom relative z-20">
+                <div class="max-w-3xl mx-auto text-center">
+                    <div
+                        class="inline-flex items-center gap-2 glass-panel px-5 py-2 rounded-full mb-6 text-sm font-medium">
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full "></div>
+                        <span data-ar="منذ 25 عاماً من التميز • سوريا" data-en="25 Years of Excellence • Syria">منذ 25
+                            عاماً
+                            من التميز • سوريا</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.15] tracking-tight mb-6">
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-white drop-shadow-sm"
+                            data-ar="شركة الفهاد للتجارة والتوزيع" data-en="Fahad Trading & Distribution Company">شركة
+                            الفهاد للتجارة والتوزيع</span>
+                    </h1>
+
+                    <p class="text-xl md:text-2xl text-white/95 max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
+                        data-ar="نقدم لكم خلاصة خبرتنا الممتدة من خلال وكالاتنا الثلاث الرائدة، لتلبي كافة احتياجاتكم من المنتجات الغذائية الفاخرة بأعلى المعايير العالمية."
+                        data-en="Offering the essence of our expertise through our three leading agencies, to meet all your needs for premium food products with the highest international standards.">
+                        نقدم لكم خلاصة خبرتنا الممتدة من خلال وكالاتنا الثلاث الرائدة، لتلبي كافة احتياجاتكم من المنتجات
+                        الغذائية الفاخرة بأعلى المعايير العالمية.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#products"
+                            class="inline-flex items-center justify-center gap-3 bg-[#D97706] text-white px-9 py-4 rounded-[2rem] font-bold text-lg hover:bg-[#b45309] hover:-translate-y-1 hover:shadow-2xl transition-all shadow-lg shadow-[#D97706]/30">
+                            <span data-ar="استكشف المنتجات" data-en="Explore Products">استكشف المنتجات</span>
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center gap-3 border-2 border-white/70 hover:bg-white/10 hover:-translate-y-1 hover:shadow-xl px-8 py-4 rounded-3xl font-semibold text-lg transition-all">
+                            <i class="fas fa-phone"></i>
+                            <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="relative bg-center bg-cover border-b border-[#F0EBE1]"
+            style="background-image: url('https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=1920&q=80');">
+            <!-- Dark overlay to ensure contrast -->
+            <div class="absolute inset-0 bg-black/60 z-0"></div>
+            <div class="container-custom relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/20">
+                    <div class="py-9 px-6 text-center">
+                        <div class="stat-value text-white">25</div>
+                        <div class="text-amber-200 mt-1 text-sm tracking-wider" data-ar="سنة خبرة"
+                            data-en="Years of Excellence">سنة خبرة</div>
+                    </div>
+                    <div class="py-9 px-6 text-center">
+                        <div class="stat-value text-white">150+</div>
+                        <div class="text-amber-200 mt-1 text-sm tracking-wider" data-ar="شريك تجاري"
+                            data-en="Business Partners">شريك تجاري</div>
+                    </div>
+                    <div class="py-9 px-6 text-center">
+                        <div class="stat-value text-white">500+</div>
+                        <div class="text-amber-200 mt-1 text-sm tracking-wider" data-ar="منتج متنوع"
+                            data-en="Product Varieties">منتج متنوع</div>
+                    </div>
+                    <div class="py-9 px-6 text-center">
+                        <div class="stat-value text-white">10K+</div>
+                        <div class="text-amber-200 mt-1 text-sm tracking-wider" data-ar="عميل سعيد"
+                            data-en="Happy Customers">عميل سعيد</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="py-20 relative bg-center bg-cover overflow-hidden"
+            style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745a872f?auto=format&fit=crop&w=1920&q=80');">
+            <!-- Consistent Dark Overlay for Harmony -->
+            <div class="absolute inset-0 bg-black/75 z-0"></div>
+            <div class="container-custom relative z-10">
+                <div class="grid lg:grid-cols-12 gap-x-16 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="section-label mb-4 text-amber-300" data-ar="من نحن" data-en="ABOUT US">من نحن</div>
+                        <h2 class="section-header mb-7 text-white" data-ar="ريادة في عالم الأغذية الفاخرة"
+                            data-en="Leadership in Premium Food">ريادة في عالم الأغذية الفاخرة</h2>
+
+                        <div class="max-w-2xl text-lg text-white/90 space-y-5">
+                            <p data-ar="شركة الفهاد التجارية للأغذية هي واحدة من أعرق الشركات في سوريا. نقدم أجود أنواع المواد الغذائية بأسعار تنافسية منذ أكثر من 25 عاماً."
+                                data-en="Fahad Trading Company for Food is one of the most established companies in Syria. We have been providing the highest quality food products at competitive prices for over 25 years.">
+                                شركة الفهاد التجارية للأغذية هي واحدة من أعرق الشركات في سوريا. نقدم أجود أنواع المواد
+                                الغذائية بأسعار تنافسية منذ أكثر من 25 عاماً.
+                            </p>
+                            <p data-ar="نمتلك ثلاث علامات تجارية رائدة: الفهاد، أروى، وهمسة صيف، تغطي جميع احتياجات السوق بأعلى معايير الجودة."
+                                data-en="We own three leading brands: Fahad, Arwa, and Hamsa Summer, covering all market needs with the highest quality standards.">
+                                نمتلك ثلاث علامات تجارية رائدة: الفهاد، أروى، وهمسة صيف، تغطي جميع احتياجات السوق بأعلى
+                                معايير الجودة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 mt-12 lg:mt-0 relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-tr from-amber-100 to-emerald-50 rounded-[2.5rem] -z-10 transform rotate-3 ">
+                        </div>
+                        <div
+                            class="absolute -inset-8 bg-gradient-to-bl from-emerald-100/50 to-amber-50/50 rounded-full -z-20 transform -rotate-6 ">
+                        </div>
+                        <div
+                            class="rounded-3xl overflow-hidden border-4 border-white shadow-[0_20px_50px_-12px_rgba(6,78,59,0.15)] relative">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&h=700&fit=crop"
+                                class="w-full aspect-[16/13] object-cover hover:scale-110 transition-transform duration-[1.5s]"
+                                alt="Fahad Foods Team">
+                            <div
+                                class="absolute bottom-6 right-6 glass-panel px-6 py-4 rounded-2xl border-white/50 text-center transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+                                <div class="text-3xl font-black text-[#D97706] mb-1">25+</div>
+                                <div class="text-xs font-bold text-stone-700 tracking-wide" data-ar="عاماً من الخبرة"
+                                    data-en="Years Experience">عاماً من الخبرة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR STORY (PARALLAX) -->
+        <section class="py-32 relative flex items-center justify-center bg-fixed bg-center bg-cover"
+            style="background-image: url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=2000&q=80');">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-[#064E3B]/80 z-0"></div>
+            <div class="container-custom relative z-10">
+                <div class="max-w-3xl mx-auto text-center">
+                    <div class="section-label mb-3 text-amber-300" data-ar="قصتنا" data-en="OUR STORY">قصتنا</div>
+                    <h2 class="section-header mb-6 text-white" data-ar="من بداية بسيطة إلى ريادة"
+                        data-en="From Humble Beginnings to Leadership">من بداية بسيطة إلى ريادة</h2>
+                    <p class="text-xl text-white/95 leading-relaxed"
+                        data-ar="بدأت رحلة الفهاد عام 1999 بحلم بسيط: تقديم أجود المنتجات الغذائية للعائلة السورية. اليوم، بعد أكثر من 25 عاماً، أصبحنا واحدة من أكثر الشركات ثقة في سوريا، ونفخر بثلاث علامات تجارية تخدم آلاف العائلات يومياً."
+                        data-en="Our journey began in 1999 with a simple dream: to provide the highest quality food products to Syrian families. Today, after more than 25 years, we have become one of the most trusted companies in Syria.">
+                        بدأت رحلة الفهاد عام 1999 بحلم بسيط: تقديم أجود المنتجات الغذائية للعائلة السورية. اليوم، بعد
+                        أكثر
+                        من 25 عاماً، أصبحنا واحدة من أكثر الشركات ثقة في سوريا، ونفخر بثلاث علامات تجارية تخدم آلاف
+                        العائلات
+                        يومياً.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS (BRANDS) -->
+        <section id="products" class="py-20 relative bg-center bg-cover overflow-hidden"
+            style="background-image: url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1920&q=80');">
+            <!-- Consistent Dark Overlay for Harmony -->
+            <div class="absolute inset-0 bg-black/75 z-0"></div>
+            <div class="container-custom relative z-10">
+                <div class="text-center mb-14">
+                    <div class="section-label mb-3 text-amber-300" data-ar="ماركاتنا" data-en="OUR BRANDS">ماركاتنا
+                    </div>
+                    <h2 class="section-header text-white" data-ar="استكشف ماركات مجموعة الفهاد"
+                        data-en="Explore Fahad Group Brands">استكشف ماركات مجموعة الفهاد</h2>
                 </div>
 
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.15] tracking-tight mb-6">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-100 to-white drop-shadow-sm" data-ar="مجموعة الفهاد التجارية" data-en="Fahad Commercial Group">مجموعة الفهاد التجارية</span>
-                </h1>
-
-                <p class="text-xl md:text-2xl text-white/95 max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
-                    data-ar="نقدم لكم خلاصة خبرتنا الممتدة من خلال وكالاتنا الثلاث الرائدة، لتلبي كافة احتياجاتكم من المنتجات الغذائية الفاخرة بأعلى المعايير العالمية."
-                    data-en="Offering the essence of our expertise through our three leading agencies, to meet all your needs for premium food products with the highest international standards.">
-                    نقدم لكم خلاصة خبرتنا الممتدة من خلال وكالاتنا الثلاث الرائدة، لتلبي كافة احتياجاتكم من المنتجات الغذائية الفاخرة بأعلى المعايير العالمية.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#products"
-                        class="inline-flex items-center justify-center gap-3 bg-[#D97706] text-white px-9 py-4 rounded-[2rem] font-bold text-lg hover:bg-[#b45309] hover:-translate-y-1 hover:shadow-2xl transition-all shadow-lg shadow-[#D97706]/30">
-                        <span data-ar="استكشف المنتجات" data-en="Explore Products">استكشف المنتجات</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Brand 1: Arwa -->
+                    <a href="javascript:void(0)" onclick="openBrandPage('arwa')" class="group cursor-pointer">
+                        <div
+                            class="premium-card bg-white rounded-[2rem] overflow-hidden relative h-full flex flex-col shadow-lg border border-[#F0EBE1] hover:border-[#D97706]/40 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(6,78,59,0.15)]">
+                            <div
+                                class="h-48 w-full bg-[#FAF8F5] p-6 flex items-center justify-center relative overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-amber-50 to-emerald-50 opacity-50 group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div
+                                    class="absolute -right-10 -top-10 w-32 h-32 bg-amber-200/40 rounded-full blur-2xl group-hover:bg-amber-300/60 transition-colors duration-500">
+                                </div>
+                                <img src="./images/arwa-logo.jpeg"
+                                    class="max-w-[200px] max-h-full object-contain relative z-10 transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-md"
+                                    alt="Arwa">
+                            </div>
+                            <div class="p-8 text-center bg-white flex-1 flex flex-col justify-center relative z-20">
+                                <h3 class="text-2xl font-black text-[#064E3B] mb-2 group-hover:text-[#D97706] transition-colors"
+                                    data-ar="ماركة أروى" data-en="Arwa Brand">ماركة أروى</h3>
+                                <p class="text-stone-500 text-sm"
+                                    data-ar="أجود أنواع الحبوب والسكريات والدقيق والمنتجات الأساسية"
+                                    data-en="Premium grains, sugars, flour and basic products">أجود أنواع الحبوب
+                                    والسكريات والدقيق والمنتجات الأساسية</p>
+                            </div>
+                        </div>
                     </a>
-                    <a href="#contact"
-                        class="inline-flex items-center justify-center gap-3 border-2 border-white/70 hover:bg-white/10 hover:-translate-y-1 hover:shadow-xl px-8 py-4 rounded-3xl font-semibold text-lg transition-all">
-                        <i class="fas fa-phone"></i>
-                        <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+
+                    <!-- Brand 2: Hamsa -->
+                    <a href="javascript:void(0)" onclick="openBrandPage('hamsa')" class="group cursor-pointer">
+                        <div
+                            class="premium-card bg-white rounded-[2rem] overflow-hidden relative h-full flex flex-col shadow-lg border border-[#F0EBE1] hover:border-[#D97706]/40 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(6,78,59,0.15)]">
+                            <div
+                                class="h-48 w-full bg-[#FAF8F5] p-6 flex items-center justify-center relative overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-sky-50 to-emerald-50 opacity-50 group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div
+                                    class="absolute -left-10 -bottom-10 w-32 h-32 bg-emerald-200/40 rounded-full blur-2xl group-hover:bg-emerald-300/60 transition-colors duration-500">
+                                </div>
+                                <img src="./images/hamsa-logo.jpg"
+                                    class="max-w-[200px] max-h-full object-contain relative z-10 transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-md"
+                                    alt="Hamsa">
+                            </div>
+                            <div class="p-8 text-center bg-white flex-1 flex flex-col justify-center relative z-20">
+                                <h3 class="text-2xl font-black text-[#064E3B] mb-2 group-hover:text-[#D97706] transition-colors"
+                                    data-ar="ماركة همسة صيف" data-en="Hamsa Seif Brand">ماركة همسة صيف</h3>
+                                <p class="text-stone-500 text-sm"
+                                    data-ar="تشكيلة واسعة من البقوليات والمنتجات الطبيعية المعقمة"
+                                    data-en="Wide range of sterilized legumes and natural products">تشكيلة واسعة من
+                                    البقوليات والمنتجات الطبيعية المعقمة</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Brand 3: Coldin -->
+                    <a href="javascript:void(0)" onclick="openBrandPage('coldin')" class="group cursor-pointer">
+                        <div
+                            class="premium-card bg-white rounded-[2rem] overflow-hidden relative h-full flex flex-col shadow-lg border border-[#F0EBE1] hover:border-[#D97706]/40 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(6,78,59,0.15)]">
+                            <div
+                                class="h-48 w-full bg-[#FAF8F5] p-6 flex items-center justify-center relative overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-sky-50 to-emerald-50 opacity-50 group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div
+                                    class="absolute -right-10 -top-10 w-32 h-32 bg-amber-200/40 rounded-full blur-2xl group-hover:bg-amber-300/60 transition-colors duration-500">
+                                </div>
+                                <img src="./images/kolden-logo.jpeg"
+                                    class="max-w-[200px] max-h-full object-contain relative z-10 transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-md"
+                                    alt="Coldin">
+                            </div>
+                            <div class="p-8 text-center bg-white flex-1 flex flex-col justify-center relative z-20">
+                                <h3 class="text-2xl font-black text-[#064E3B] mb-2 group-hover:text-[#D97706] transition-colors"
+                                    data-ar="ماركة كولدين" data-en="Coldin Brand">ماركة كولدين</h3>
+                                <p class="text-stone-500 text-sm"
+                                    data-ar="أجود أنواع الأرز المصري والسوري والكبسة والإسباني والبسمتي"
+                                    data-en="Premium Egyptian, Syrian, Kabsa, Spanish and Basmati rice">أجود أنواع الأرز
+                                    المصري والسوري والكبسة والإسباني والبسمتي</p>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- STATS -->
-    <section class="relative bg-center bg-cover border-b border-[#F0EBE1]" style="background-image: url('https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=1920&q=80');">
-        <!-- Dark overlay to ensure contrast -->
-        <div class="absolute inset-0 bg-black/60 z-0"></div>
-        <div class="container-custom relative z-10">
-            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/20">
-                <div class="py-9 px-6 text-center">
-                    <div class="stat-value text-white">25</div>
-                    <div class="text-amber-200 mt-1 text-sm tracking-wider" data-ar="سنة خبرة"
-                        data-en="Years of Excellence">سنة خبرة</div>
-                </div>
-                <div class="py-9 px-6 text-center">
-                    <div class="stat-value text-white">150+</div>
-                    <div class="text-amber-200 mt-1 text-sm tracking-wider" data-ar="شريك تجاري"
-                        data-en="Business Partners">شريك تجاري</div>
-                </div>
-                <div class="py-9 px-6 text-center">
-                    <div class="stat-value text-white">500+</div>
-                    <div class="text-amber-200 mt-1 text-sm tracking-wider" data-ar="منتج متنوع"
-                        data-en="Product Varieties">منتج متنوع</div>
-                </div>
-                <div class="py-9 px-6 text-center">
-                    <div class="stat-value text-white">10K+</div>
-                    <div class="text-amber-200 mt-1 text-sm tracking-wider" data-ar="عميل سعيد"
-                        data-en="Happy Customers">عميل سعيد</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="py-20 relative bg-center bg-cover overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745a872f?auto=format&fit=crop&w=1920&q=80');">
-        <!-- Consistent Dark Overlay for Harmony -->
-        <div class="absolute inset-0 bg-black/75 z-0"></div>
-        <div class="container-custom relative z-10">
-            <div class="grid lg:grid-cols-12 gap-x-16 items-center">
-                <div class="lg:col-span-7">
-                    <div class="section-label mb-4 text-amber-300" data-ar="من نحن" data-en="ABOUT US">من نحن</div>
-                    <h2 class="section-header mb-7 text-white" data-ar="ريادة في عالم الأغذية الفاخرة"
-                        data-en="Leadership in Premium Food">ريادة في عالم الأغذية الفاخرة</h2>
-
-                    <div class="max-w-2xl text-lg text-white/90 space-y-5">
-                        <p data-ar="شركة الفهاد التجارية للأغذية هي واحدة من أعرق الشركات في سوريا. نقدم أجود أنواع المواد الغذائية بأسعار تنافسية منذ أكثر من 25 عاماً."
-                            data-en="Fahad Trading Company for Food is one of the most established companies in Syria. We have been providing the highest quality food products at competitive prices for over 25 years.">
-                            شركة الفهاد التجارية للأغذية هي واحدة من أعرق الشركات في سوريا. نقدم أجود أنواع المواد
-                            الغذائية بأسعار تنافسية منذ أكثر من 25 عاماً.
-                        </p>
-                        <p data-ar="نمتلك ثلاث علامات تجارية رائدة: الفهاد، أروى، وهمسة صيف، تغطي جميع احتياجات السوق بأعلى معايير الجودة."
-                            data-en="We own three leading brands: Fahad, Arwa, and Hamsa Summer, covering all market needs with the highest quality standards.">
-                            نمتلك ثلاث علامات تجارية رائدة: الفهاد، أروى، وهمسة صيف، تغطي جميع احتياجات السوق بأعلى
-                            معايير الجودة.
-                        </p>
+        <!-- GALLERY SLIDER -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="container-custom">
+                <div class="flex items-end justify-between mb-8">
+                    <div>
+                        <div class="section-label mb-3" data-ar="المعرض" data-en="GALLERY">المعرض</div>
+                        <h2 class="section-header" data-ar="اطلع على أعمالنا" data-en="Explore Our Work">اطلع على
+                            أعمالنا
+                        </h2>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <button onclick="slideGallery(-1)" class="slider-arrow"><i
+                                class="fas fa-chevron-left"></i></button>
+                        <button onclick="slideGallery(1)" class="slider-arrow"><i
+                                class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 mt-12 lg:mt-0 relative">
-                    <div class="absolute -inset-4 bg-gradient-to-tr from-amber-100 to-emerald-50 rounded-[2.5rem] -z-10 transform rotate-3 "></div>
-                    <div class="absolute -inset-8 bg-gradient-to-bl from-emerald-100/50 to-amber-50/50 rounded-full -z-20 transform -rotate-6 "></div>
-                    <div class="rounded-3xl overflow-hidden border-4 border-white shadow-[0_20px_50px_-12px_rgba(6,78,59,0.15)] relative">
-                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&h=700&fit=crop"
-                            class="w-full aspect-[16/13] object-cover hover:scale-110 transition-transform duration-[1.5s]" alt="Fahad Foods Team">
-                        <div class="absolute bottom-6 right-6 glass-panel px-6 py-4 rounded-2xl border-white/50 text-center transform hover:-translate-y-2 hover:scale-105 transition-all duration-300">
-                            <div class="text-3xl font-black text-[#D97706] mb-1">25+</div>
-                            <div class="text-xs font-bold text-stone-700 tracking-wide" data-ar="عاماً من الخبرة" data-en="Years Experience">عاماً من الخبرة</div>
-                        </div>
+                <div class="slider-container" onmouseenter="pauseGalleryAutoplay()"
+                    onmouseleave="resumeGalleryAutoplay()">
+                    <div id="gallerySlider" class="slider-track flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- OUR STORY (PARALLAX) -->
-    <section class="py-32 relative flex items-center justify-center bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=2000&q=80');">
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-[#064E3B]/80 z-0"></div>
-        <div class="container-custom relative z-10">
-            <div class="max-w-3xl mx-auto text-center">
-                <div class="section-label mb-3 text-amber-300" data-ar="قصتنا" data-en="OUR STORY">قصتنا</div>
-                <h2 class="section-header mb-6 text-white" data-ar="من بداية بسيطة إلى ريادة"
-                    data-en="From Humble Beginnings to Leadership">من بداية بسيطة إلى ريادة</h2>
-                <p class="text-xl text-white/95 leading-relaxed"
-                    data-ar="بدأت رحلة الفهاد عام 1999 بحلم بسيط: تقديم أجود المنتجات الغذائية للعائلة السورية. اليوم، بعد أكثر من 25 عاماً، أصبحنا واحدة من أكثر الشركات ثقة في سوريا، ونفخر بثلاث علامات تجارية تخدم آلاف العائلات يومياً."
-                    data-en="Our journey began in 1999 with a simple dream: to provide the highest quality food products to Syrian families. Today, after more than 25 years, we have become one of the most trusted companies in Syria.">
-                    بدأت رحلة الفهاد عام 1999 بحلم بسيط: تقديم أجود المنتجات الغذائية للعائلة السورية. اليوم، بعد أكثر
-                    من 25 عاماً، أصبحنا واحدة من أكثر الشركات ثقة في سوريا، ونفخر بثلاث علامات تجارية تخدم آلاف العائلات
-                    يومياً.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCTS (BRANDS) -->
-    <section id="products" class="py-20 relative bg-center bg-cover overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1920&q=80');">
-        <!-- Consistent Dark Overlay for Harmony -->
-        <div class="absolute inset-0 bg-black/75 z-0"></div>
-        <div class="container-custom relative z-10">
-            <div class="text-center mb-14">
-                <div class="section-label mb-3 text-amber-300" data-ar="وكالاتنا" data-en="OUR BRANDS">وكالاتنا</div>
-                <h2 class="section-header text-white" data-ar="استكشف وكالات مجموعة الفهاد"
-                    data-en="Explore Fahad Group Brands">استكشف وكالات مجموعة الفهاد</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Brand 1: Arwa -->
-                <a href="javascript:void(0)" onclick="openBrandPage('arwa')" class="group cursor-pointer">
-                    <div class="premium-card bg-white rounded-[2rem] overflow-hidden relative h-full flex flex-col shadow-lg border border-[#F0EBE1] hover:border-[#D97706]/40 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(6,78,59,0.15)]">
-                        <div class="h-48 w-full bg-[#FAF8F5] p-6 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-emerald-50 opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
-                            <div class="absolute -right-10 -top-10 w-32 h-32 bg-amber-200/40 rounded-full blur-2xl group-hover:bg-amber-300/60 transition-colors duration-500"></div>
-                            <img src="./images/arwa-logo.jpeg" class="max-w-[200px] max-h-full object-contain relative z-10 transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-md" alt="Arwa">
-                        </div>
-                        <div class="p-8 text-center bg-white flex-1 flex flex-col justify-center relative z-20">
-                            <h3 class="text-2xl font-black text-[#064E3B] mb-2 group-hover:text-[#D97706] transition-colors" data-ar="وكالة أروى" data-en="Arwa Agency">وكالة أروى</h3>
-                            <p class="text-stone-500 text-sm" data-ar="أجود المنتجات الغذائية الفاخرة والمعلبات" data-en="Premium food products & canned goods">أجود المنتجات الغذائية الفاخرة والمعلبات</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Brand 2: Hamsa -->
-                <a href="javascript:void(0)" onclick="openBrandPage('hamsa')" class="group cursor-pointer">
-                    <div class="premium-card bg-white rounded-[2rem] overflow-hidden relative h-full flex flex-col shadow-lg border border-[#F0EBE1] hover:border-[#D97706]/40 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(6,78,59,0.15)]">
-                        <div class="h-48 w-full bg-[#FAF8F5] p-6 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-sky-50 to-emerald-50 opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
-                            <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-emerald-200/40 rounded-full blur-2xl group-hover:bg-emerald-300/60 transition-colors duration-500"></div>
-                            <img src="./images/hamsa-logo.jpg" class="max-w-[200px] max-h-full object-contain relative z-10 transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-2 drop-shadow-md" alt="Hamsa">
-                        </div>
-                        <div class="p-8 text-center bg-white flex-1 flex flex-col justify-center relative z-20">
-                            <h3 class="text-2xl font-black text-[#064E3B] mb-2 group-hover:text-[#D97706] transition-colors" data-ar="وكالة همسة صيف" data-en="Hamsa Seif Agency">وكالة همسة صيف</h3>
-                            <p class="text-stone-500 text-sm" data-ar="تشكيلة واسعة من المخللات والمواد الغذائية" data-en="Wide range of pickles and groceries">تشكيلة واسعة من المخللات والمواد الغذائية</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Brand 3: Coldin -->
-                <a href="javascript:void(0)" onclick="openBrandPage('coldin')" class="group cursor-pointer">
-                    <div class="premium-card bg-white rounded-[2rem] overflow-hidden relative h-full flex flex-col shadow-lg border border-[#F0EBE1] hover:border-[#D97706]/40 transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_50px_-12px_rgba(6,78,59,0.15)]">
-                        <div class="h-48 w-full bg-[#064E3B] p-6 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550081699-22a014eb3b76?auto=format&fit=crop&w=800&q=80')] opacity-40 mix-blend-overlay group-hover:scale-125 group-hover:opacity-60 transition-all duration-1000"></div>
-                            <h3 class="text-4xl font-black text-white relative z-10 tracking-widest drop-shadow-[0_5px_10px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:text-amber-300 transition-all duration-700">COLDIN</h3>
-                        </div>
-                        <div class="p-8 text-center bg-white flex-1 flex flex-col justify-center relative z-20">
-                            <h3 class="text-2xl font-black text-[#064E3B] mb-2 group-hover:text-[#D97706] transition-colors" data-ar="وكالة كولدين" data-en="Coldin Agency">وكالة كولدين</h3>
-                            <p class="text-stone-500 text-sm" data-ar="أفضل أنواع اللحوم والدجاج المجمد والمأكولات البحرية" data-en="Best frozen meats, chicken, and seafood">أفضل أنواع اللحوم والدجاج المجمد والمأكولات البحرية</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALLERY SLIDER -->
-    <section id="gallery" class="py-20 bg-white">
-        <div class="container-custom">
-            <div class="flex items-end justify-between mb-8">
-                <div>
-                    <div class="section-label mb-3" data-ar="المعرض" data-en="GALLERY">المعرض</div>
-                    <h2 class="section-header" data-ar="اطلع على أعمالنا" data-en="Explore Our Work">اطلع على أعمالنا
-                    </h2>
-                </div>
-                <div class="hidden md:flex items-center gap-3">
+                <div class="flex md:hidden justify-center gap-4 mt-6">
                     <button onclick="slideGallery(-1)" class="slider-arrow"><i class="fas fa-chevron-left"></i></button>
                     <button onclick="slideGallery(1)" class="slider-arrow"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
+        </section>
 
-            <div class="slider-container" onmouseenter="pauseGalleryAutoplay()" onmouseleave="resumeGalleryAutoplay()">
-                <div id="gallerySlider" class="slider-track flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
+        <!-- REELS FULL WIDTH -->
+        <section id="reels" class="py-20 bg-[#064E3B] text-white">
+            <div class="container-custom mb-8">
+                <div class="flex items-end justify-between">
+                    <div>
+                        <div class="section-label mb-3 text-[#D97706]" data-ar="ريلز" data-en="REELS">ريلز</div>
+                        <h2 class="section-header text-white" data-ar="شاهد أحدث الفيديوهات"
+                            data-en="Watch Our Latest Videos">شاهد أحدث الفيديوهات</h2>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <button onclick="slideReels(-1)" class="slider-arrow"><i
+                                class="fas fa-chevron-left"></i></button>
+                        <button onclick="slideReels(1)" class="slider-arrow"><i
+                                class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="full-width-reels px-6">
+                <div class="slider-container" onmouseenter="pauseReelsAutoplay()" onmouseleave="resumeReelsAutoplay()">
+                    <div id="reelsSlider"
+                        class="slider-track flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-1">
+                    </div>
                 </div>
             </div>
 
             <div class="flex md:hidden justify-center gap-4 mt-6">
-                <button onclick="slideGallery(-1)" class="slider-arrow"><i class="fas fa-chevron-left"></i></button>
-                <button onclick="slideGallery(1)" class="slider-arrow"><i class="fas fa-chevron-right"></i></button>
+                <button onclick="slideReels(-1)" class="slider-arrow"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="slideReels(1)" class="slider-arrow"><i class="fas fa-chevron-right"></i></button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- REELS FULL WIDTH -->
-    <section id="reels" class="py-20 bg-[#064E3B] text-white">
-        <div class="container-custom mb-8">
-            <div class="flex items-end justify-between">
-                <div>
-                    <div class="section-label mb-3 text-[#D97706]" data-ar="ريلز" data-en="REELS">ريلز</div>
-                    <h2 class="section-header text-white" data-ar="شاهد أحدث الفيديوهات"
-                        data-en="Watch Our Latest Videos">شاهد أحدث الفيديوهات</h2>
-                </div>
-                <div class="hidden md:flex items-center gap-3">
-                    <button onclick="slideReels(-1)" class="slider-arrow"><i class="fas fa-chevron-left"></i></button>
-                    <button onclick="slideReels(1)" class="slider-arrow"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="full-width-reels px-6">
-            <div class="slider-container" onmouseenter="pauseReelsAutoplay()" onmouseleave="resumeReelsAutoplay()">
-                <div id="reelsSlider" class="slider-track flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-1">
-                </div>
-            </div>
-        </div>
-
-        <div class="flex md:hidden justify-center gap-4 mt-6">
-            <button onclick="slideReels(-1)" class="slider-arrow"><i class="fas fa-chevron-left"></i></button>
-            <button onclick="slideReels(1)" class="slider-arrow"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-
-    <!-- (Old testimonials removed) -->
-    <!-- PARTNERS SECTION -->
-    <section class="py-16 bg-[#FAF8F5] border-y border-[#F0EBE1] overflow-hidden">
-        <div class="container-custom">
-            <div class="text-center mb-12">
-                <div class="section-label" data-ar="شركاء النجاح" data-en="OUR PARTNERS">شركاء النجاح</div>
-                <h2 class="section-header mt-2" data-ar="نعمل مع أفضل العلامات" data-en="We Work With The Best">نعمل مع
-                    أفضل العلامات</h2>
-            </div>
-
-            <div class="relative w-full overflow-hidden flex items-center" dir="ltr">
-                <div
-                    class="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#FAF8F5] to-transparent z-10 pointer-events-none">
-                </div>
-                <div
-                    class="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#FAF8F5] to-transparent z-10 pointer-events-none">
+        <!-- (Old testimonials removed) -->
+        <!-- PARTNERS SECTION -->
+        <section class="py-16 bg-[#FAF8F5] border-y border-[#F0EBE1] overflow-hidden">
+            <div class="container-custom">
+                <div class="text-center mb-12">
+                    <div class="section-label" data-ar="شركاء النجاح" data-en="OUR PARTNERS">شركاء النجاح</div>
+                    <h2 class="section-header mt-2" data-ar="نعمل مع أفضل العلامات" data-en="We Work With The Best">نعمل
+                        مع
+                        أفضل العلامات</h2>
                 </div>
 
-                <div class="marquee-track">
-                    <!-- Set 1 -->
-                    <div class="flex gap-6 md:gap-10 pr-6 md:pr-10">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=400&h=400&fit=crop"
-                            alt="Brand">
+                <div class="relative w-full overflow-hidden flex items-center" dir="ltr">
+                    <div
+                        class="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#FAF8F5] to-transparent z-10 pointer-events-none">
                     </div>
-                    <!-- Set 2 (Duplicate for seamless loop) -->
-                    <div class="flex gap-6 md:gap-10 pr-6 md:pr-10">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop"
-                            alt="Brand">
-                        <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=400&h=400&fit=crop"
-                            alt="Brand">
+                    <div
+                        class="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#FAF8F5] to-transparent z-10 pointer-events-none">
+                    </div>
+
+                    <div class="marquee-track">
+                        <!-- Set 1 -->
+                        <div class="flex gap-6 md:gap-10 pr-6 md:pr-10">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=400&h=400&fit=crop"
+                                alt="Brand">
+                        </div>
+                        <!-- Set 2 (Duplicate for seamless loop) -->
+                        <div class="flex gap-6 md:gap-10 pr-6 md:pr-10">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1507206130118-b5907f817163?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop"
+                                alt="Brand">
+                            <img class="partner-logo w-24 h-24 md:w-40 md:h-40 rounded-full object-cover shadow-sm border-2 border-slate-200 flex-shrink-0"
+                                src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=400&h=400&fit=crop"
+                                alt="Brand">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- OUR BRANDS -->
-    <section id="brands" class="py-20 relative bg-center bg-cover overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1920&q=80');">
-        <!-- Consistent Dark Overlay for Harmony -->
-        <div class="absolute inset-0 bg-black/75 z-0"></div>
-        
-        <div class="container-custom relative z-10">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <div class="section-label mb-3 text-amber-300" data-ar="علاماتنا التجارية" data-en="OUR BRANDS">علاماتنا التجارية</div>
-                <h2 class="section-header text-white" data-ar="تنوع يلبي كل احتياجاتك" data-en="Diversity That Meets All Your Needs">تنوع يلبي كل احتياجاتك</h2>
-                <p class="text-white/90 text-lg mt-4" data-ar="نقدم لكم ثلاث علامات تجارية رائدة تتميز بالجودة والموثوقية لتناسب جميع متطلباتكم." data-en="We offer you three leading brands characterized by quality and reliability to suit all your requirements.">نقدم لكم ثلاث علامات تجارية رائدة تتميز بالجودة والموثوقية لتناسب جميع متطلباتكم.</p>
-            </div>
+        </section>
+        <!-- OUR BRANDS -->
+        <section id="brands" class="py-20 relative bg-center bg-cover overflow-hidden"
+            style="background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1920&q=80');">
+            <!-- Consistent Dark Overlay for Harmony -->
+            <div class="absolute inset-0 bg-black/75 z-0"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Brand 1 -->
-                <div class="premium-card rounded-3xl p-8 bg-white border border-[#F0EBE1] flex flex-col items-center text-center transform hover:-translate-y-4 transition-all duration-500">
-                    <div class="w-32 h-32 rounded-full bg-[#FAF8F5] border-4 border-amber-100 flex items-center justify-center mb-6 shadow-inner">
-                        <i class="fas fa-crown text-5xl text-[#D97706]"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-[#064E3B]" data-ar="الفهاد" data-en="Fahad">الفهاد</h3>
-                    <p class="text-stone-600 leading-relaxed font-medium" data-ar="العلامة الرائدة والأكثر عراقة في اللحوم والمواد الغذائية الأساسية عالية الجودة." data-en="The leading and most established brand in high-quality meats and basic food products.">العلامة الرائدة والأكثر عراقة في اللحوم والمواد الغذائية الأساسية عالية الجودة.</p>
+            <div class="container-custom relative z-10">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="section-label mb-3 text-amber-300" data-ar="علاماتنا التجارية" data-en="OUR BRANDS">
+                        علاماتنا التجارية</div>
+                    <h2 class="section-header text-white" data-ar="تنوع يلبي كل احتياجاتك"
+                        data-en="Diversity That Meets All Your Needs">تنوع يلبي كل احتياجاتك</h2>
+                    <p class="text-white/90 text-lg mt-4"
+                        data-ar="نقدم لكم ثلاث علامات تجارية رائدة تتميز بالجودة والموثوقية لتناسب جميع متطلباتكم."
+                        data-en="We offer you three leading brands characterized by quality and reliability to suit all your requirements.">
+                        نقدم لكم ثلاث علامات تجارية رائدة تتميز بالجودة والموثوقية لتناسب جميع متطلباتكم.</p>
                 </div>
 
-                <!-- Brand 2 -->
-                <div class="premium-card rounded-3xl p-8 bg-white border border-[#F0EBE1] flex flex-col items-center text-center transform md:-translate-y-4 hover:-translate-y-8 transition-all duration-500 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border-amber-100">
-                    <div class="w-32 h-32 rounded-full bg-[#FAF8F5] border-4 border-emerald-100 flex items-center justify-center mb-6 shadow-inner">
-                        <i class="fas fa-leaf text-5xl text-emerald-600"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Brand 1 -->
+                    <div
+                        class="premium-card rounded-3xl p-8 bg-white border border-[#F0EBE1] flex flex-col items-center text-center transform hover:-translate-y-4 transition-all duration-500">
+                        <div
+                            class="w-32 h-32 rounded-full bg-[#FAF8F5] border-4 border-amber-100 flex items-center justify-center mb-6 shadow-inner">
+                            <i class="fas fa-crown text-5xl text-[#D97706]"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-[#064E3B]" data-ar="الفهاد" data-en="Fahad">الفهاد</h3>
+                        <p class="text-stone-600 leading-relaxed font-medium"
+                            data-ar="العلامة الرائدة والأكثر عراقة في اللحوم والمواد الغذائية الأساسية عالية الجودة."
+                            data-en="The leading and most established brand in high-quality meats and basic food products.">
+                            العلامة الرائدة والأكثر عراقة في اللحوم والمواد الغذائية الأساسية عالية الجودة.</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-[#064E3B]" data-ar="أروى" data-en="Arwa">أروى</h3>
-                    <p class="text-stone-600 leading-relaxed font-medium" data-ar="متخصصة في المنتجات الطبيعية 100% مثل العسل النقي، زيت الزيتون الفاخر، والمكسرات المنتقاة بعناية." data-en="Specialized in 100% natural products like pure honey, premium olive oil, and carefully selected nuts.">متخصصة في المنتجات الطبيعية 100% مثل العسل النقي، زيت الزيتون الفاخر، والمكسرات المنتقاة بعناية.</p>
-                </div>
 
-                <!-- Brand 3 -->
-                <div class="premium-card rounded-3xl p-8 bg-white border border-[#F0EBE1] flex flex-col items-center text-center transform hover:-translate-y-4 transition-all duration-500">
-                    <div class="w-32 h-32 rounded-full bg-[#FAF8F5] border-4 border-amber-100 flex items-center justify-center mb-6 shadow-inner">
-                        <i class="fas fa-sun text-5xl text-[#D97706]"></i>
+                    <!-- Brand 2 -->
+                    <div
+                        class="premium-card rounded-3xl p-8 bg-white border border-[#F0EBE1] flex flex-col items-center text-center transform md:-translate-y-4 hover:-translate-y-8 transition-all duration-500 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border-amber-100">
+                        <div
+                            class="w-32 h-32 rounded-full bg-[#FAF8F5] border-4 border-emerald-100 flex items-center justify-center mb-6 shadow-inner">
+                            <i class="fas fa-leaf text-5xl text-emerald-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-[#064E3B]" data-ar="أروى" data-en="Arwa">أروى</h3>
+                        <p class="text-stone-600 leading-relaxed font-medium"
+                            data-ar="متخصصة في المنتجات الطبيعية 100% مثل العسل النقي، زيت الزيتون الفاخر، والمكسرات المنتقاة بعناية."
+                            data-en="Specialized in 100% natural products like pure honey, premium olive oil, and carefully selected nuts.">
+                            متخصصة في المنتجات الطبيعية 100% مثل العسل النقي، زيت الزيتون الفاخر، والمكسرات المنتقاة
+                            بعناية.</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-[#064E3B]" data-ar="همسة صيف" data-en="Hamsa Sayf">همسة صيف</h3>
-                    <p class="text-stone-600 leading-relaxed font-medium" data-ar="خيارك الأمثل للمنتجات الطازجة وجاهزة الطهي والتي تضفي لمسة من المتعة والسهولة على وجباتك." data-en="Your ideal choice for fresh and ready-to-cook products that add a touch of joy and ease to your meals.">خيارك الأمثل للمنتجات الطازجة وجاهزة الطهي والتي تضفي لمسة من المتعة والسهولة على وجباتك.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ (New Style) -->
-    <section class="py-20 bg-white">
-        <div class="container-custom">
-            <div class="text-center mb-14">
-                <div class="section-label mb-3" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</div>
-                <h2 class="section-header" data-ar="كل ما تحتاج تعرفه" data-en="Everything You Need to Know">كل ما تحتاج
-                    تعرفه</h2>
-            </div>
-
-            <div class="max-w-3xl mx-auto space-y-4">
-                <div class="faq-item">
-                    <div onclick="toggleFAQ(this)" class="faq-question">
-                        <span data-ar="هل منتجاتكم طازجة يومياً؟" data-en="Are your products fresh daily?">هل منتجاتكم
-                            طازجة يومياً؟</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer-wrapper">
-                        <p data-ar="نعم، جميع منتجات اللحوم والمنتجات الطازجة يتم توريدها يومياً من أفضل المصادر لضمان أقصى درجات النضارة."
-                            data-en="Yes, all meats and fresh products are supplied daily from the best sources to ensure maximum freshness.">
-                            نعم، جميع منتجات اللحوم والمنتجات الطازجة يتم توريدها يومياً من أفضل المصادر لضمان
-                            أقصى درجات النضارة.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div onclick="toggleFAQ(this)" class="faq-question">
-                        <span data-ar="هل تقدمون توصيل للمنازل؟" data-en="Do you offer home delivery?">هل تقدمون توصيل
-                            للمنازل؟</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer-wrapper">
-                        <p data-ar="نعم، نوفر خدمة التوصيل داخل معظم مناطق سوريا. يمكنك التواصل معنا لمعرفة التفاصيل والمناطق المشمولة."
-                            data-en="Yes, we offer delivery services across most areas in Syria. You can contact us for details and covered areas.">
-                            نعم، نوفر خدمة التوصيل داخل معظم مناطق سوريا. يمكنك التواصل معنا لمعرفة التفاصيل والمناطق
-                            المشمولة.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div onclick="toggleFAQ(this)" class="faq-question">
-                        <span data-ar="هل المنتجات خالية من المواد الحافظة؟"
-                            data-en="Are the products free of preservatives?">هل المنتجات خالية من المواد
-                            الحافظة؟</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer-wrapper">
-                        <p data-ar="معظم منتجاتنا الطبيعية خالية تماماً من المواد الحافظة والملونات الصناعية، ونحرص على استخدام مكونات طبيعية 100%."
-                            data-en="Most of our natural products are completely free of preservatives and artificial colors, and we ensure the use of 100% natural ingredients.">
-                            معظم منتجاتنا الطبيعية خالية تماماً من المواد الحافظة والملونات الصناعية، ونحرص على استخدام
-                            مكونات طبيعية 100%.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div onclick="toggleFAQ(this)" class="faq-question">
-                        <span data-ar="كيف أضمن جودة المنتجات؟" data-en="How do I ensure product quality?">كيف أضمن جودة
-                            المنتجات؟</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer-wrapper">
-                        <p data-ar="جميع منتجاتنا تخضع لفحوصات جودة صارمة في كل مرحلة من مراحل الإنتاج، ونضمن جودتها بنسبة 100% قبل وصولها إليك."
-                            data-en="All our products undergo strict quality checks at every stage of production, and we guarantee their quality 100% before they reach you.">
-                            جميع منتجاتنا تخضع لفحوصات جودة صارمة في كل مرحلة من مراحل الإنتاج، ونضمن جودتها بنسبة 100%
-                            قبل وصولها إليك.</p>
+                    <!-- Brand 3 -->
+                    <div
+                        class="premium-card rounded-3xl p-8 bg-white border border-[#F0EBE1] flex flex-col items-center text-center transform hover:-translate-y-4 transition-all duration-500">
+                        <div
+                            class="w-32 h-32 rounded-full bg-[#FAF8F5] border-4 border-amber-100 flex items-center justify-center mb-6 shadow-inner">
+                            <i class="fas fa-sun text-5xl text-[#D97706]"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-[#064E3B]" data-ar="همسة صيف" data-en="Hamsa Sayf">همسة
+                            صيف</h3>
+                        <p class="text-stone-600 leading-relaxed font-medium"
+                            data-ar="خيارك الأمثل للمنتجات الطازجة وجاهزة الطهي والتي تضفي لمسة من المتعة والسهولة على وجباتك."
+                            data-en="Your ideal choice for fresh and ready-to-cook products that add a touch of joy and ease to your meals.">
+                            خيارك الأمثل للمنتجات الطازجة وجاهزة الطهي والتي تضفي لمسة من المتعة والسهولة على وجباتك.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-20 relative bg-center bg-cover overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1596649749718-ce8ccfa9bc74?auto=format&fit=crop&w=1920&q=80');">
-        <!-- Consistent Dark Overlay for Harmony -->
-        <div class="absolute inset-0 bg-black/75 z-0 pointer-events-none"></div>
+        <!-- FAQ (New Style) -->
+        <section class="py-20 bg-white">
+            <div class="container-custom">
+                <div class="text-center mb-14">
+                    <div class="section-label mb-3" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</div>
+                    <h2 class="section-header" data-ar="كل ما تحتاج تعرفه" data-en="Everything You Need to Know">كل ما
+                        تحتاج
+                        تعرفه</h2>
+                </div>
 
-        <div class="container-custom relative z-10">
-            <div class="grid lg:grid-cols-12 gap-x-16">
-                <div class="lg:col-span-5 mb-12 lg:mb-0 h-fit">
-                    <div class="section-label mb-4 text-amber-300" data-ar="تواصل معنا" data-en="CONTACT US">تواصل معنا
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="faq-item">
+                        <div onclick="toggleFAQ(this)" class="faq-question">
+                            <span data-ar="هل منتجاتكم طازجة يومياً؟" data-en="Are your products fresh daily?">هل
+                                منتجاتكم
+                                طازجة يومياً؟</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <p data-ar="نعم، جميع منتجات اللحوم والمنتجات الطازجة يتم توريدها يومياً من أفضل المصادر لضمان أقصى درجات النضارة."
+                                data-en="Yes, all meats and fresh products are supplied daily from the best sources to ensure maximum freshness.">
+                                نعم، جميع منتجات اللحوم والمنتجات الطازجة يتم توريدها يومياً من أفضل المصادر لضمان
+                                أقصى درجات النضارة.</p>
+                        </div>
                     </div>
-                    <h2 class="section-header mb-6 text-white" data-ar="نحن هنا لخدمتك" data-en="We're Here to Serve You">نحن هنا
-                        لخدمتك</h2>
-                    <p class="text-lg text-white/90 max-w-sm mb-8"
-                        data-ar="اتصل بنا مباشرة أو اترك لنا رسالة. فريقنا جاهز للرد عليك في أقرب وقت."
-                        data-en="Contact us directly or leave a message. Our team is ready to respond as soon as possible.">
-                        اتصل بنا مباشرة أو اترك لنا رسالة. فريقنا جاهز للرد عليك في أقرب وقت.</p>
 
-                    <div class="space-y-4 text-sm">
-                        <a href="tel:0986022225"
-                            class="flex items-center gap-4 p-4 rounded-2xl border border-[#F0EBE1] hover:border-[#D97706]/50 transition group bg-white">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#D97706] text-xl">
-                                <i class="fas fa-mobile-alt"></i></div>
-                            <div>
-                                <div class="text-xs text-stone-500" data-ar="جوال" data-en="Mobile">جوال</div>
-                                <div class="font-bold text-lg group-hover:text-[#D97706] transition text-[#064E3B]">0986 022 225</div>
-                            </div>
-                        </a>
-                        <a href="tel:0933320674"
-                            class="flex items-center gap-4 p-4 rounded-2xl border border-[#F0EBE1] hover:border-[#D97706]/50 transition group bg-white">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#D97706] text-xl">
-                                <i class="fas fa-phone-alt"></i></div>
-                            <div>
-                                <div class="text-xs text-stone-500" data-ar="جوال" data-en="Mobile">جوال</div>
-                                <div class="font-bold text-lg group-hover:text-[#D97706] transition text-[#064E3B]">0933 320 674</div>
-                            </div>
-                        </a>
-                        <a href="tel:6929225"
-                            class="flex items-center gap-4 p-4 rounded-2xl border border-[#F0EBE1] hover:border-[#D97706]/50 transition group bg-white">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#D97706] text-xl">
-                                <i class="fas fa-phone"></i></div>
-                            <div>
-                                <div class="text-xs text-stone-500" data-ar="هاتف أرضي" data-en="Landline">هاتف أرضي
+                    <div class="faq-item">
+                        <div onclick="toggleFAQ(this)" class="faq-question">
+                            <span data-ar="هل تقدمون توصيل للمنازل؟" data-en="Do you offer home delivery?">هل تقدمون
+                                توصيل
+                                للمنازل؟</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <p data-ar="نعم، نوفر خدمة التوصيل داخل معظم مناطق سوريا. يمكنك التواصل معنا لمعرفة التفاصيل والمناطق المشمولة."
+                                data-en="Yes, we offer delivery services across most areas in Syria. You can contact us for details and covered areas.">
+                                نعم، نوفر خدمة التوصيل داخل معظم مناطق سوريا. يمكنك التواصل معنا لمعرفة التفاصيل
+                                والمناطق
+                                المشمولة.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div onclick="toggleFAQ(this)" class="faq-question">
+                            <span data-ar="هل المنتجات خالية من المواد الحافظة؟"
+                                data-en="Are the products free of preservatives?">هل المنتجات خالية من المواد
+                                الحافظة؟</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <p data-ar="معظم منتجاتنا الطبيعية خالية تماماً من المواد الحافظة والملونات الصناعية، ونحرص على استخدام مكونات طبيعية 100%."
+                                data-en="Most of our natural products are completely free of preservatives and artificial colors, and we ensure the use of 100% natural ingredients.">
+                                معظم منتجاتنا الطبيعية خالية تماماً من المواد الحافظة والملونات الصناعية، ونحرص على
+                                استخدام
+                                مكونات طبيعية 100%.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div onclick="toggleFAQ(this)" class="faq-question">
+                            <span data-ar="كيف أضمن جودة المنتجات؟" data-en="How do I ensure product quality?">كيف أضمن
+                                جودة
+                                المنتجات؟</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <p data-ar="جميع منتجاتنا تخضع لفحوصات جودة صارمة في كل مرحلة من مراحل الإنتاج، ونضمن جودتها بنسبة 100% قبل وصولها إليك."
+                                data-en="All our products undergo strict quality checks at every stage of production, and we guarantee their quality 100% before they reach you.">
+                                جميع منتجاتنا تخضع لفحوصات جودة صارمة في كل مرحلة من مراحل الإنتاج، ونضمن جودتها بنسبة
+                                100%
+                                قبل وصولها إليك.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-20 relative bg-center bg-cover overflow-hidden"
+            style="background-image: url('https://images.unsplash.com/photo-1596649749718-ce8ccfa9bc74?auto=format&fit=crop&w=1920&q=80');">
+            <!-- Consistent Dark Overlay for Harmony -->
+            <div class="absolute inset-0 bg-black/75 z-0 pointer-events-none"></div>
+
+            <div class="container-custom relative z-10">
+                <div class="grid lg:grid-cols-12 gap-x-16">
+                    <div class="lg:col-span-5 mb-12 lg:mb-0 h-fit">
+                        <div class="section-label mb-4 text-amber-300" data-ar="تواصل معنا" data-en="CONTACT US">تواصل
+                            معنا
+                        </div>
+                        <h2 class="section-header mb-6 text-white" data-ar="نحن هنا لخدمتك"
+                            data-en="We're Here to Serve You">نحن هنا
+                            لخدمتك</h2>
+                        <p class="text-lg text-white/90 max-w-sm mb-8"
+                            data-ar="اتصل بنا مباشرة أو اترك لنا رسالة. فريقنا جاهز للرد عليك في أقرب وقت."
+                            data-en="Contact us directly or leave a message. Our team is ready to respond as soon as possible.">
+                            اتصل بنا مباشرة أو اترك لنا رسالة. فريقنا جاهز للرد عليك في أقرب وقت.</p>
+
+                        <div class="space-y-4 text-sm">
+                            <a href="tel:0986022225"
+                                class="flex items-center gap-4 p-4 rounded-2xl border border-[#F0EBE1] hover:border-[#D97706]/50 transition group bg-white">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#D97706] text-xl">
+                                    <i class="fas fa-mobile-alt"></i>
                                 </div>
-                                <div class="font-bold text-lg group-hover:text-[#D97706] transition text-[#064E3B]">692 9225</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7">
-                    <div class="glass-panel rounded-3xl p-9 ">
-                        <form onsubmit="handleSubmit(event)">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                                 <div>
+                                    <div class="text-xs text-stone-500" data-ar="جوال" data-en="Mobile">جوال</div>
+                                    <div class="font-bold text-lg group-hover:text-[#D97706] transition text-[#064E3B]">
+                                        0986 022 225</div>
+                                </div>
+                            </a>
+                            <a href="tel:0933320674"
+                                class="flex items-center gap-4 p-4 rounded-2xl border border-[#F0EBE1] hover:border-[#D97706]/50 transition group bg-white">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#D97706] text-xl">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-stone-500" data-ar="جوال" data-en="Mobile">جوال</div>
+                                    <div class="font-bold text-lg group-hover:text-[#D97706] transition text-[#064E3B]">
+                                        0933 320 674</div>
+                                </div>
+                            </a>
+                            <a href="tel:6929225"
+                                class="flex items-center gap-4 p-4 rounded-2xl border border-[#F0EBE1] hover:border-[#D97706]/50 transition group bg-white">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#D97706] text-xl">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-stone-500" data-ar="هاتف أرضي" data-en="Landline">هاتف أرضي
+                                    </div>
+                                    <div class="font-bold text-lg group-hover:text-[#D97706] transition text-[#064E3B]">
+                                        692 9225</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="glass-panel rounded-3xl p-9 ">
+                            <form onsubmit="handleSubmit(event)">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2 text-[#064E3B]"
+                                            data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+                                        <input type="text" required
+                                            class="w-full px-5 py-3.5 bg-[#FAF8F5] border border-[#F0EBE1] rounded-2xl focus:outline-none focus:border-[#D97706]"
+                                            placeholder="أدخل اسمك" data-placeholder-ar="أدخل اسمك"
+                                            data-placeholder-en="Enter your name">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2 text-[#064E3B]" data-ar="رقم الهاتف"
+                                            data-en="Phone Number">رقم الهاتف</label>
+                                        <input type="tel" required
+                                            class="w-full px-5 py-3.5 bg-[#FAF8F5] border border-[#F0EBE1] rounded-2xl focus:outline-none focus:border-[#D97706]"
+                                            placeholder="09xxxxxxxx" data-placeholder-ar="09xxxxxxxx"
+                                            data-placeholder-en="09xxxxxxxx">
+                                    </div>
+                                </div>
+
+                                <div class="mb-5">
                                     <label class="block text-sm font-bold mb-2 text-[#064E3B]"
-                                        data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
-                                    <input type="text" required
+                                        data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</label>
+                                    <input type="email" required
                                         class="w-full px-5 py-3.5 bg-[#FAF8F5] border border-[#F0EBE1] rounded-2xl focus:outline-none focus:border-[#D97706]"
-                                        placeholder="أدخل اسمك" data-placeholder-ar="أدخل اسمك"
-                                        data-placeholder-en="Enter your name">
+                                        placeholder="example@email.com" data-placeholder-ar="example@email.com"
+                                        data-placeholder-en="example@email.com">
                                 </div>
-                                <div>
-                                    <label class="block text-sm font-bold mb-2 text-[#064E3B]" data-ar="رقم الهاتف"
-                                        data-en="Phone Number">رقم الهاتف</label>
-                                    <input type="tel" required
-                                        class="w-full px-5 py-3.5 bg-[#FAF8F5] border border-[#F0EBE1] rounded-2xl focus:outline-none focus:border-[#D97706]"
-                                        placeholder="09xxxxxxxx" data-placeholder-ar="09xxxxxxxx"
-                                        data-placeholder-en="09xxxxxxxx">
+
+                                <div class="mb-6">
+                                    <label class="block text-sm font-bold mb-2 text-[#064E3B]" data-ar="الرسالة"
+                                        data-en="Message">الرسالة</label>
+                                    <textarea rows="4" required
+                                        class="w-full px-5 py-3.5 bg-[#FAF8F5] border border-[#F0EBE1] rounded-2xl focus:outline-none focus:border-[#D97706] resize-y"
+                                        placeholder="اكتب رسالتك هنا..." data-placeholder-ar="اكتب رسالتك هنا..."
+                                        data-placeholder-en="Type your message here..."></textarea>
                                 </div>
-                            </div>
 
-                            <div class="mb-5">
-                                <label class="block text-sm font-bold mb-2 text-[#064E3B]"
-                                    data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</label>
-                                <input type="email" required
-                                    class="w-full px-5 py-3.5 bg-[#FAF8F5] border border-[#F0EBE1] rounded-2xl focus:outline-none focus:border-[#D97706]"
-                                    placeholder="example@email.com" data-placeholder-ar="example@email.com"
-                                    data-placeholder-en="example@email.com">
-                            </div>
-
-                            <div class="mb-6">
-                                <label class="block text-sm font-bold mb-2 text-[#064E3B]" data-ar="الرسالة"
-                                    data-en="Message">الرسالة</label>
-                                <textarea rows="4" required
-                                    class="w-full px-5 py-3.5 bg-[#FAF8F5] border border-[#F0EBE1] rounded-2xl focus:outline-none focus:border-[#D97706] resize-y"
-                                    placeholder="اكتب رسالتك هنا..." data-placeholder-ar="اكتب رسالتك هنا..."
-                                    data-placeholder-en="Type your message here..."></textarea>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full bg-[#D97706] hover:bg-[#b45309] transition text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#D97706]/30">
-                                <i class="fas fa-paper-plane"></i>
-                                <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
-                            </button>
-                        </form>
+                                <button type="submit"
+                                    class="w-full bg-[#D97706] hover:bg-[#b45309] transition text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#D97706]/30">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </div> <!-- END MAIN PAGE VIEW -->
 
     <!-- BRAND PAGE VIEW -->
     <div id="brandPageView" class="hidden min-h-screen pt-28 pb-20 bg-[#FAF8F5]">
         <div class="container-custom">
             <!-- Back Button -->
-            <button onclick="closeBrandPage()" class="mb-8 flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-[#F0EBE1] text-stone-600 hover:text-white hover:bg-[#064E3B] hover:border-[#064E3B] font-bold transition shadow-sm">
-                <i class="fas fa-arrow-right rtl:rotate-180"></i>
+            <button onclick="closeBrandPage()"
+                class="mb-8 flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-[#F0EBE1] text-stone-600 hover:text-white hover:bg-[#064E3B] hover:border-[#064E3B] font-bold transition shadow-sm">
+                <i class="fas fa-arrow-left rtl:rotate-180"></i>
                 <span id="backToHomeBrandLabel">العودة</span>
             </button>
 
             <!-- Brand Banner -->
-            <div id="brandBanner" class="bg-white rounded-[2rem] shadow-[0_15px_30px_-5px_rgba(6,78,59,0.08)] border border-[#F0EBE1] overflow-hidden mb-12 flex flex-col md:flex-row items-center p-8 gap-8">
+            <div id="brandBanner"
+                class="bg-white rounded-[2rem] shadow-[0_15px_30px_-5px_rgba(6,78,59,0.08)] border border-[#F0EBE1] overflow-hidden mb-12 flex flex-col md:flex-row items-center p-8 gap-8">
                 <!-- Injected via JS -->
             </div>
 
             <!-- Brand Products Grid -->
             <div class="mb-8 flex items-center justify-between">
-                <h3 class="text-2xl font-bold text-[#064E3B]" id="brandProductsLabel">جميع منتجات الوكالة</h3>
+                <h3 class="text-2xl font-bold text-[#064E3B]" id="brandProductsLabel">جميع منتجات الماركة</h3>
             </div>
             <div id="brandProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <!-- Products injected via JS -->
@@ -1174,27 +1335,35 @@
     <div id="productPageView" class="hidden min-h-screen pt-28 pb-20 bg-white">
         <div class="container-custom ">
             <!-- Back Button -->
-            <button onclick="closeProductPage()" class="mb-8  mt-10 flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FAF8F5] border border-[#F0EBE1] text-stone-600 hover:text-white hover:bg-[#064E3B] hover:border-[#064E3B] font-bold transition shadow-sm">
-                <i class="fas fa-arrow-right rtl:rotate-180"></i>
+            <button onclick="closeProductPage()"
+                class="mb-8  mt-10 flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FAF8F5] border border-[#F0EBE1] text-stone-600 hover:text-white hover:bg-[#064E3B] hover:border-[#064E3B] font-bold transition shadow-sm">
+                <i class="fas fa-arrow-left rtl:rotate-180"></i>
                 <span id="backToHomeLabel">العودة</span>
             </button>
-            
+
             <!-- Product Details Layout -->
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-20">
                 <!-- Image Gallery Side -->
-                <div class="relative bg-[#FAF8F5] rounded-[2rem] overflow-hidden shadow-inner border border-[#F0EBE1] p-8 h-[400px] lg:h-[600px] flex items-center justify-center group">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-emerald-500/5 pointer-events-none"></div>
-                    <img id="pageImg" src="" class="max-w-full max-h-full object-contain filter drop-shadow-xl transition-transform duration-700 group-hover:scale-105" alt="Product Image">
+                <div
+                    class="relative bg-[#FAF8F5] rounded-[2rem] overflow-hidden shadow-inner border border-[#F0EBE1] p-8 h-[400px] lg:h-[600px] flex items-center justify-center group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-emerald-500/5 pointer-events-none">
+                    </div>
+                    <img id="pageImg" src=""
+                        class="max-w-full max-h-full object-contain filter drop-shadow-xl transition-transform duration-700 group-hover:scale-105"
+                        alt="Product Image">
                 </div>
 
                 <!-- Info Side -->
                 <div class="flex flex-col justify-center h-full">
                     <div class="mb-4">
-                        <span id="pageCategory" class="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-[#064E3B] font-bold text-sm tracking-wide"></span>
+                        <span id="pageCategory"
+                            class="inline-block px-4 py-1.5 rounded-full bg-emerald-50 text-[#064E3B] font-bold text-sm tracking-wide"></span>
                     </div>
-                    
-                    <h2 id="pageTitle" class="text-4xl lg:text-5xl font-extrabold text-[#064E3B] mb-6 leading-tight"></h2>
-                    
+
+                    <h2 id="pageTitle" class="text-4xl lg:text-5xl font-extrabold text-[#064E3B] mb-6 leading-tight">
+                    </h2>
+
                     <p id="pageDescription" class="text-lg text-stone-600 leading-relaxed mb-8">
                         <!-- Filled by JS -->
                     </p>
@@ -1202,26 +1371,35 @@
                     <!-- Rich Data Grid -->
                     <div class="grid sm:grid-cols-2 gap-4 mb-8">
                         <div class="bg-white p-5 rounded-2xl border border-[#F0EBE1] shadow-sm">
-                            <div class="text-sm text-stone-500 mb-1 flex items-center gap-1.5"><i class="fas fa-box text-[#064E3B]/70"></i> <span id="pagePackagingLabel">التعبئة</span></div>
+                            <div class="text-sm text-stone-500 mb-1 flex items-center gap-1.5"><i
+                                    class="fas fa-box text-[#064E3B]/70"></i> <span
+                                    id="pagePackagingLabel">التعبئة</span></div>
                             <div id="pagePackaging" class="font-bold text-[#D97706] text-lg"></div>
                         </div>
                         <div class="bg-white p-5 rounded-2xl border border-[#F0EBE1] shadow-sm">
-                            <div class="text-sm text-stone-500 mb-1 flex items-center gap-1.5"><i class="fas fa-weight-hanging text-[#064E3B]/70"></i> <span id="pageWeightLabel">الوزن</span></div>
+                            <div class="text-sm text-stone-500 mb-1 flex items-center gap-1.5"><i
+                                    class="fas fa-weight-hanging text-[#064E3B]/70"></i> <span
+                                    id="pageWeightLabel">الوزن</span></div>
                             <div id="pageWeight" class="font-bold text-[#D97706] text-lg"></div>
                         </div>
                         <div class="bg-white p-5 rounded-2xl border border-[#F0EBE1] shadow-sm">
-                            <div class="text-sm text-stone-500 mb-1 flex items-center gap-1.5"><i class="fas fa-leaf text-[#064E3B]/70"></i> <span id="pageIngredientsLabel">المكونات</span></div>
+                            <div class="text-sm text-stone-500 mb-1 flex items-center gap-1.5"><i
+                                    class="fas fa-leaf text-[#064E3B]/70"></i> <span
+                                    id="pageIngredientsLabel">المكونات</span></div>
                             <div id="pageIngredients" class="font-bold text-[#064E3B] text-sm"></div>
                         </div>
                         <div class="bg-white p-5 rounded-2xl border border-[#F0EBE1] shadow-sm">
-                            <div class="text-sm text-stone-500 mb-1 flex items-center gap-1.5"><i class="fas fa-snowflake text-[#064E3B]/70"></i> <span id="pageStorageLabel">طريقة الحفظ</span></div>
+                            <div class="text-sm text-stone-500 mb-1 flex items-center gap-1.5"><i
+                                    class="fas fa-snowflake text-[#064E3B]/70"></i> <span id="pageStorageLabel">طريقة
+                                    الحفظ</span></div>
                             <div id="pageStorage" class="font-bold text-[#064E3B] text-sm"></div>
                         </div>
                     </div>
 
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a id="pageWhatsappBtn" href="#" target="_blank" class="flex-1 py-4 px-6 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transform hover:-translate-y-1 transition shadow-lg shadow-[#25D366]/30">
+                        <a id="pageWhatsappBtn" href="#" target="_blank"
+                            class="flex-1 py-4 px-6 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transform hover:-translate-y-1 transition shadow-lg shadow-[#25D366]/30">
                             <i class="fab fa-whatsapp text-2xl"></i> <span id="pageOrderLabel">طلب عبر واتساب</span>
                         </a>
                     </div>
@@ -1236,7 +1414,8 @@
                         <h3 class="text-3xl font-bold text-[#064E3B]" id="relatedLabel">منتجات ذات صلة</h3>
                     </div>
                 </div>
-                <div id="relatedProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div id="relatedProductsGrid"
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     <!-- Related Products JS -->
                 </div>
             </div>
@@ -1246,35 +1425,50 @@
     <!-- FOOTER -->
     <footer class="bg-white border-t border-[#F0EBE1] py-16 relative overflow-hidden">
         <!-- Subtle decorative element -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-amber-100 rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-amber-100 rounded-full blur-[80px] opacity-20 pointer-events-none">
+        </div>
 
         <div class="container-custom relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <!-- Branding -->
                 <div class="md:col-span-2">
                     <a href="#home" class="inline-block cursor-pointer">
-                        <img src="./images/fahad-logo.jpeg" class="h-20 w-auto object-contain mb-6 rounded-2xl shadow-sm border border-[#F0EBE1] transition-transform hover:scale-105" alt="Fahad Foods">
+                        <img src="./images/fahad-logo.jpeg"
+                            class="h-20 w-auto object-contain mb-6 rounded-2xl shadow-sm border border-[#F0EBE1] transition-transform hover:scale-105"
+                            alt="Fahad Foods">
                     </a>
                     <p class="text-stone-500 text-sm leading-relaxed max-w-sm"
                         data-ar="شركة الفهاد التجارية للأغذية. متخصصون في تقديم أفضل المنتجات الغذائية الفاخرة بجودة عالية منذ أكثر من 25 سنة، لنلبي تطلعات العائلة السورية."
                         data-en="Fahad Trading Company. Specialists in providing the best premium food products with high quality for over 25 years, meeting the expectations of the Syrian family.">
-                        شركة الفهاد التجارية للأغذية. متخصصون في تقديم أفضل المنتجات الغذائية الفاخرة بجودة عالية منذ أكثر من 25 سنة، لنلبي تطلعات العائلة السورية.</p>
+                        شركة الفهاد التجارية للأغذية. متخصصون في تقديم أفضل المنتجات الغذائية الفاخرة بجودة عالية منذ
+                        أكثر من 25 سنة، لنلبي تطلعات العائلة السورية.</p>
                 </div>
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="font-bold text-[#064E3B] mb-5 text-lg" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+                    <h4 class="font-bold text-[#064E3B] mb-5 text-lg" data-ar="روابط سريعة" data-en="Quick Links">روابط
+                        سريعة</h4>
                     <div class="flex flex-col gap-3 text-stone-500 font-medium text-sm">
-                        <a href="#home" class="hover:text-[#D97706] transition flex items-center gap-2"><i class="fas fa-chevron-left text-xs rtl:rotate-180"></i> <span data-ar="الرئيسية" data-en="Home">الرئيسية</span></a>
-                        <a href="#products" class="hover:text-[#D97706] transition flex items-center gap-2"><i class="fas fa-chevron-left text-xs rtl:rotate-180"></i> <span data-ar="منتجاتنا" data-en="Products">منتجاتنا</span></a>
-                        <a href="#gallery" class="hover:text-[#D97706] transition flex items-center gap-2"><i class="fas fa-chevron-left text-xs rtl:rotate-180"></i> <span data-ar="معرض الصور" data-en="Gallery">معرض الصور</span></a>
-                        <a href="#contact" class="hover:text-[#D97706] transition flex items-center gap-2"><i class="fas fa-chevron-left text-xs rtl:rotate-180"></i> <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span></a>
+                        <a href="#home" class="hover:text-[#D97706] transition flex items-center gap-2"><i
+                                class="fas fa-chevron-left text-xs rtl:rotate-180"></i> <span data-ar="الرئيسية"
+                                data-en="Home">الرئيسية</span></a>
+                        <a href="#products" class="hover:text-[#D97706] transition flex items-center gap-2"><i
+                                class="fas fa-chevron-left text-xs rtl:rotate-180"></i> <span data-ar="منتجاتنا"
+                                data-en="Products">منتجاتنا</span></a>
+                        <a href="#gallery" class="hover:text-[#D97706] transition flex items-center gap-2"><i
+                                class="fas fa-chevron-left text-xs rtl:rotate-180"></i> <span data-ar="معرض الصور"
+                                data-en="Gallery">معرض الصور</span></a>
+                        <a href="#contact" class="hover:text-[#D97706] transition flex items-center gap-2"><i
+                                class="fas fa-chevron-left text-xs rtl:rotate-180"></i> <span data-ar="تواصل معنا"
+                                data-en="Contact Us">تواصل معنا</span></a>
                     </div>
                 </div>
 
                 <!-- Connect -->
                 <div>
-                    <h4 class="font-bold text-[#064E3B] mb-5 text-lg" data-ar="تواصل معنا" data-en="Connect With Us">تواصل معنا</h4>
+                    <h4 class="font-bold text-[#064E3B] mb-5 text-lg" data-ar="تواصل معنا" data-en="Connect With Us">
+                        تواصل معنا</h4>
                     <div class="flex gap-4 mb-6">
                         <a href="https://www.facebook.com/profile.php?id=100063668846503" target="_blank"
                             class="w-11 h-11 flex items-center justify-center rounded-full bg-[#FAF8F5] hover:bg-[#D97706] text-[#064E3B] hover:text-white border border-[#F0EBE1] transition shadow-sm"><i
@@ -1287,7 +1481,8 @@
             </div>
 
             <!-- Copyright -->
-            <div class="flex flex-col md:flex-row items-center justify-between text-xs text-stone-400 pt-8 border-t border-[#F0EBE1]">
+            <div
+                class="flex flex-col md:flex-row items-center justify-between text-xs text-stone-400 pt-8 border-t border-[#F0EBE1]">
                 <div class="mb-4 md:mb-0">
                     © 2025 Fahad Foods. All Rights Reserved.
                 </div>
@@ -1359,6 +1554,13 @@
                     el.placeholder = (lang === 'ar') ? el.getAttribute('data-placeholder-ar') : el.getAttribute('data-placeholder-en');
                 });
 
+                // Update dynamic SPA views if open
+                if (!document.getElementById('productPageView').classList.contains('hidden')) {
+                    openProductDetail(currentBrandId, currentProductIndex);
+                } else if (!document.getElementById('brandPageView').classList.contains('hidden')) {
+                    openBrandPage(currentBrandId);
+                }
+
                 setTimeout(() => {
                     loader.classList.remove('opacity-100');
                     loader.classList.add('opacity-0');
@@ -1374,18 +1576,21 @@
         }
 
         const galleryImages = [
-            "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1567306301408-9b74779a11af?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1515942400420-2b98fed1f515?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1534483509719-3feaee7c30da?w=600&h=600&fit=crop",
             "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1493770348161-369560ae357d?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1464306208223-e0b4495a5553?w=600&h=600&fit=crop",
-            "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=600&h=600&fit=crop"
+            "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=600&h=600&fit=crop",
+            "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=600&fit=crop"
         ];
 
         const reelsData = [
@@ -1562,58 +1767,66 @@
         const brandData = {
             'arwa': {
                 id: 'arwa',
-                title_ar: 'وكالة أروى',
-                title_en: 'Arwa Agency',
+                title_ar: 'ماركة أروى',
+                title_en: 'Arwa Brand',
                 logo: './images/arwa-logo.jpeg',
                 theme: 'amber',
-                desc_ar: 'أجود المنتجات الغذائية الفاخرة، نقدم لكم تشكيلة واسعة من الأجبان، الألبان، والمعلبات بمعايير جودة عالمية.',
-                desc_en: 'Premium food products, offering a wide range of cheeses, dairies, and canned goods with international quality standards.',
+                desc_ar: 'تفخر ماركة أروى بكونها مؤسسة ملتزمة بتقديم منتجات غذائية عالية الجودة، آمنة، ومغذية، سواء من خلال استيراد وتوزيع أفضل المواد الغذائية أو تصنيع منتجات مبتكرة تلبي احتياجات الأسرة العصرية. رؤيتنا: أن نكون الخيار الأول والموثوق لكل من يبحث عن غذاء صحي ومستدام يجمع بين الجودة العالمية والطعم الأصيل. رسالتنا: توفير غذاء يعزز الصحة والرفاهية، مع الالتزام التام بأعلى معايير السلامة الغذائية والجودة الدولية، والاستدامة البيئية، والشفافية الكاملة في كل مرحلة من مراحل الإنتاج والتوزيع. في أروى، نؤمن أن الغذاء ليس مجرد طعام، بل هو مصدر حياة وطاقة وسعادة. لذلك نعمل يوميًا لنقدم لكم الأفضل دائمًا. مع أروى .. التغذية والعافية',
+                desc_en: 'Arwa Brand is proud to be an institution committed to providing high-quality, safe, and nutritious food products, whether by importing and distributing the best food ingredients or manufacturing innovative products that meet the needs of modern families. Our Vision: To be the first and trusted choice for everyone looking for healthy and sustainable food that combines international quality and authentic taste. Our Mission: Providing food that promotes health and well-being, with full commitment to the highest food safety and international quality standards, environmental sustainability, and full transparency in every stage of production and distribution. At Arwa, we believe that food is not just nourishment, but a source of life, energy, and happiness. That\'s why we work daily to always offer you the best. With Arwa... Nutrition and Wellness',
                 products: [
-                    { name_ar: 'عسل سدر جبلي', name_en: 'Mountain Sidr Honey', img: 'https://images.pexels.com/photos/3331486/pexels-photo-3331486.jpeg?auto=compress&cs=tinysrgb&w=800', packaging_ar: 'عبوة زجاجية', packaging_en: 'Glass Jar', weight_ar: '500 غ', weight_en: '500g', ingredients_ar: 'عسل سدر صافي 100%', ingredients_en: '100% Pure Sidr Honey', storage_ar: 'يحفظ في درجة حرارة الغرفة', storage_en: 'Store at room temp' },
-                    { name_ar: 'عسل زهور طبيعي', name_en: 'Natural Flower Honey', img: 'https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=800', packaging_ar: 'عبوة زجاجية', packaging_en: 'Glass Jar', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'عسل زهور طبيعي', ingredients_en: 'Natural floral honey', storage_ar: 'يحفظ في درجة حرارة الغرفة', storage_en: 'Store at room temp' },
-                    { name_ar: 'كاجو محمص', name_en: 'Roasted Cashews', img: 'https://images.pexels.com/photos/4203102/pexels-photo-4203102.jpeg?auto=compress&cs=tinysrgb&w=800', packaging_ar: 'كيس مقوى', packaging_en: 'Cardboard Pouch', weight_ar: '250 غ', weight_en: '250g', ingredients_ar: 'كاجو، ملح خفيف', ingredients_en: 'Cashews, light salt', storage_ar: 'يحفظ في مكان جاف', storage_en: 'Store in a dry place' },
-                    { name_ar: 'لوز نيء', name_en: 'Raw Almonds', img: 'https://images.pexels.com/photos/1201509/pexels-photo-1201509.jpeg?auto=compress&cs=tinysrgb&w=800', packaging_ar: 'كيس مفرغ', packaging_en: 'Vacuum Pack', weight_ar: '500 غ', weight_en: '500g', ingredients_ar: 'لوز طبيعي 100%', ingredients_en: '100% Natural almonds', storage_ar: 'يحفظ في مكان جاف', storage_en: 'Store in a dry place' },
-                    { name_ar: 'مكسرات مشكلة', name_en: 'Mixed Nuts', img: 'https://images.pexels.com/photos/86649/pexels-photo-86649.jpeg?auto=compress&cs=tinysrgb&w=800', packaging_ar: 'علبة معدنية', packaging_en: 'Metal Can', weight_ar: '400 غ', weight_en: '400g', ingredients_ar: 'فستق، لوز، كاجو، بندق', ingredients_en: 'Pistachios, almonds, cashews', storage_ar: 'يحفظ في مكان جاف ومغلق', storage_en: 'Keep sealed in dry place' }
+                    { name_ar: 'برغل خشن', name_en: 'Coarse Bulgur', img: 'https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'برغل خشن حبة كاملة معقم ومغربل', ingredients_en: 'Coarse bulgur, sterilized and sifted', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'برغل ناعم', name_en: 'Fine Bulgur', img: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'برغل ناعم معقم ومغربل', ingredients_en: 'Fine bulgur, sterilized and sifted', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'فريكة خضراء ناعمة', name_en: 'Fine Green Freekeh', img: 'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'فريكة خضراء ناعمة منقاة ومعقمة', ingredients_en: 'Purified and sterilized fine green Freekeh', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'سكر ناعم أبيض', name_en: 'White Soft Sugar', img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'سكر ناعم أبيض نقي 100%', ingredients_en: 'Fine White Sugar', storage_ar: 'يحفظ في مكان جاف', storage_en: 'Store in a dry place' },
+                    { name_ar: 'طحين زيرو أبيض', name_en: 'White Zero Flour', img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'طحين زيرو أبيض فاخر', ingredients_en: 'White zero flour', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'شوفان كامل', name_en: 'Oats', img: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=800&q=80', packaging_ar: 'علبة كرتون', packaging_en: 'Carton Box', weight_ar: '500 غ', weight_en: '500g', ingredients_ar: 'رقائق شوفان كاملة معقمة', ingredients_en: 'Oats, sterilized flakes', storage_ar: 'يحفظ في مكان جاف ومغلق', storage_en: 'Store in a dry place' },
+                    { name_ar: 'ذرة بوشار', name_en: 'Popcorn Kernels', img: 'https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'حبوب ذرة بوشار طبيعية معقمة', ingredients_en: 'Popcorn kernels', storage_ar: 'يحفظ في مكان جاف', storage_en: 'Store in a dry place' },
+                    { name_ar: 'سميد فاخر', name_en: 'Premium Semolina', img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'سميد قمح فاخر مغربل ومعقم', ingredients_en: 'semolina', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'كشكة ممتازة', name_en: 'Premium Keshek', img: 'https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?w=800&q=80', packaging_ar: 'عبوة مغلفة', packaging_en: 'Wrapped Package', weight_ar: '500 غ', weight_en: '500g', ingredients_ar: 'كشكة بلدية ممتازة معقمة ومجففة', ingredients_en: 'Premium Keshek', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' }
                 ]
             },
             'hamsa': {
                 id: 'hamsa',
-                title_ar: 'وكالة همسة صيف',
-                title_en: 'Hamsa Seif Agency',
+                title_ar: 'ماركة همسة صيف',
+                title_en: 'Hamsa Seif Brand',
                 logo: './images/hamsa-logo.jpg',
                 theme: 'sky',
-                desc_ar: 'تشكيلة واسعة من المخللات، الزيتون، والمواد الغذائية التي تضفي نكهة رائعة على مائدتك.',
-                desc_en: 'Wide range of pickles, olives, and groceries that add great flavor to your table.',
+                desc_ar: 'تلتزم ماركة همسة صيف بتقديم أجود أنواع البقوليات الطبيعية التي تشكل أساس المائدة اليومية. نحرص على انتقاء المحاصيل من أفضل المزارع وتعبئتها بأحدث التقنيات للحفاظ على قيمتها الغذائية ونضارتها الكاملة، لتكون خياركم الصحي الموثوق في كل وجبة.',
+                desc_en: 'Hamsa Seif Brand is committed to providing the finest natural legumes that form the foundation of your daily meals. We carefully select crops from the best farms and pack them using the latest technologies to preserve their full nutritional value and freshness, making them your trusted healthy choice.',
                 products: [
-                    { name_ar: 'زيتون أخضر فاخر', name_en: 'Premium Green Olives', img: 'https://images.pexels.com/photos/4197491/pexels-photo-4197491.jpeg?auto=compress&cs=tinysrgb&w=800', packaging_ar: 'عبوة بلاستيك', packaging_en: 'Plastic Jar', weight_ar: '750 غ', weight_en: '750g', ingredients_ar: 'زيتون أخضر، ماء، ملح', ingredients_en: 'Green olives, water, salt', storage_ar: 'يحفظ في مكان بارد', storage_en: 'Store in a cool place' },
-                    { name_ar: 'زيتون أسود', name_en: 'Black Olives', img: 'https://images.pexels.com/photos/4197561/pexels-photo-4197561.jpeg?auto=compress&cs=tinysrgb&w=800', packaging_ar: 'عبوة بلاستيك', packaging_en: 'Plastic Jar', weight_ar: '750 غ', weight_en: '750g', ingredients_ar: 'زيتون أسود، ماء، ملح', ingredients_en: 'Black olives, water, salt', storage_ar: 'يحفظ في مكان بارد', storage_en: 'Store in a cool place' },
-                    { name_ar: 'مخللات مشكلة', name_en: 'Mixed Pickles', img: 'https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=800&q=80', packaging_ar: 'عبوة زجاجية', packaging_en: 'Glass Jar', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'خضار مشكلة، خل، ملح', ingredients_en: 'Mixed veggies, vinegar, salt', storage_ar: 'يحفظ في الثلاجة بعد الفتح', storage_en: 'Refrigerate after opening' }
+                    { name_ar: 'عدس أحمر مجروش', name_en: 'Crushed Red Lentils', img: 'https://images.unsplash.com/photo-1515942400420-2b98fed1f515?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'عدس أحمر مجروش معقم ومنقى', ingredients_en: 'Sterilized and purified crushed red Lentils', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'عدس أسود', name_en: 'Black Lentils', img: 'https://images.unsplash.com/photo-1515942400420-2b98fed1f515?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'عدس أسود معقم ومنقى', ingredients_en: 'Sterilized and purified black lentils', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'عدس أبيض', name_en: 'White Lentils', img: 'https://images.unsplash.com/photo-1515942400420-2b98fed1f515?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'عدس أبيض معقم ومنقى', ingredients_en: 'Sterilized and purified white Lentils', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'حمص حب', name_en: 'Chickpeas', img: 'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'حمص حب معقم ومنقى', ingredients_en: 'Purified and sterilized chickpeas', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'فول بلدية', name_en: 'Faba Beans', img: 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'فول حبة بلدية معقم ومنقى', ingredients_en: 'Sterilized and purified beans', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'فاصولياء عريضة', name_en: 'White Wide Beans', img: 'https://images.unsplash.com/photo-1551248429-40975aa4de74?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'فاصولياء عريضة معقمة ومنقاة', ingredients_en: 'white wide beans', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'فاصولياء بيضاء مصرية', name_en: 'Egyptian White Beans', img: 'https://images.unsplash.com/photo-1551248429-40975aa4de74?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'فاصولياء بيضاء مصرية معقمة ومنقاة', ingredients_en: 'Sterilized and purified Egyptian white kidney beans', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'فاصولياء حمراء', name_en: 'Red Beans', img: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'فاصولياء حمراء معقمة ومنقاة', ingredients_en: 'Sterilized and purified red kidney beans', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'ترمس بلدي حلو', name_en: 'Sweet Lupine', img: 'https://images.unsplash.com/photo-1515942400420-2b98fed1f515?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'ترمس بلدي حلو معقم ومنقى', ingredients_en: 'Lupine sweet, sterilized and purified', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' }
                 ]
             },
             'coldin': {
                 id: 'coldin',
-                title_ar: 'وكالة كولدين',
-                title_en: 'Coldin Agency',
-                logo: '', // No logo, we use styling
-                theme: 'slate',
-                desc_ar: 'أفضل أنواع اللحوم المجمدة والدجاج والمأكولات البحرية بأعلى معايير الجودة والسلامة الغذائية.',
-                desc_en: 'Best frozen meats, chicken, and seafood with the highest quality and food safety standards.',
+                title_ar: 'ماركة كولدين',
+                title_en: 'Coldin Brand',
+                logo: './images/kolden-logo.jpeg',
+                theme: 'emerald',
+                desc_ar: 'تتميز ماركة كولدين بتقديم تشكيلة استثنائية من أفخر أنواع الأرز حول العالم. من أرز البسمتي الهندي طويل الحبة إلى الأرز المصري والسوري والكبسة، نضمن لكم حبات نقية ومتناسقة تُطهى بمثالية لتمنح مائدتكم طعماً أصيلاً وجودة لا تضاهى.',
+                desc_en: 'Coldin Brand stands out by offering an exceptional selection of the finest rice varieties from around the world. From long-grain Indian Basmati to Egyptian, Syrian, and Kabsa rice, we guarantee pure, uniform grains that cook perfectly to bring authentic taste and unmatched quality to your table.',
                 products: [
-                    { name_ar: 'لحم بقري مفروم', name_en: 'Minced Beef', img: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80', packaging_ar: 'كيس', packaging_en: 'Bag', weight_ar: '500 غ', weight_en: '500g', ingredients_ar: 'لحم بقري صافي 100%', ingredients_en: '100% Pure Beef', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' },
-                    { name_ar: 'لحم غنم طازج', name_en: 'Fresh Lamb', img: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80', packaging_ar: 'طبق فل', packaging_en: 'Foam Tray', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'لحم غنم طازج بالعظم', ingredients_en: 'Fresh lamb with bone', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' },
-                    { name_ar: 'ستيك بقري', name_en: 'Beef Steak', img: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80', packaging_ar: 'تغليف مفرغ', packaging_en: 'Vacuum Pack', weight_ar: '750 غ', weight_en: '750g', ingredients_ar: 'لحم عجل ممتاز', ingredients_en: 'Premium Veal', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' },
-                    { name_ar: 'صدور دجاج', name_en: 'Chicken Breasts', img: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80', packaging_ar: 'طبق فل', packaging_en: 'Foam Tray', weight_ar: '900 غ', weight_en: '900g', ingredients_ar: 'صدور دجاج بدون عظم', ingredients_en: 'Boneless chicken breasts', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' },
-                    { name_ar: 'دجاج كامل مجمد', name_en: 'Whole Frozen Chicken', img: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80', packaging_ar: 'كيس', packaging_en: 'Bag', weight_ar: '1.2 كغ', weight_en: '1.2kg', ingredients_ar: 'دجاج كامل منظف', ingredients_en: 'Cleaned whole chicken', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' },
-                    { name_ar: 'أفخاذ دجاج', name_en: 'Chicken Thighs', img: 'https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=800&q=80', packaging_ar: 'طبق فل', packaging_en: 'Foam Tray', weight_ar: '800 غ', weight_en: '800g', ingredients_ar: 'أفخاذ دجاج طازجة', ingredients_en: 'Fresh chicken thighs', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' },
-                    { name_ar: 'فيليه سمك', name_en: 'Fish Fillet', img: 'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&w=800&q=80', packaging_ar: 'كيس', packaging_en: 'Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'سمك أبيض فيليه', ingredients_en: 'White fish fillet', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' },
-                    { name_ar: 'روبيان فاخر', name_en: 'Premium Shrimp', img: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80', packaging_ar: 'كيس مفرغ', packaging_en: 'Vacuum Pack', weight_ar: '500 غ', weight_en: '500g', ingredients_ar: 'روبيان مقشر', ingredients_en: 'Peeled shrimp', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' },
-                    { name_ar: 'سلمون طازج', name_en: 'Fresh Salmon', img: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80', packaging_ar: 'تغليف خاص', packaging_en: 'Special Pack', weight_ar: '300 غ', weight_en: '300g', ingredients_ar: 'سلمون نرويجي', ingredients_en: 'Norwegian salmon', storage_ar: 'يحفظ مجمداً عند -18°', storage_en: 'Store frozen at -18°C' }
+                    { name_ar: 'أرز مصري', name_en: 'Egyptian Rice', img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'أرز مصري حبة قصيرة فاخر معقم', ingredients_en: 'Short grain Egyptian rice', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'أرز سوري', name_en: 'Syrian Rice', img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'أرز بلدي سوري حبة متوسطة معقم ونظيف', ingredients_en: 'Medium grain Syrian rice', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'أرز حبَّة طويلة (كبسة تايلندي)', name_en: 'Thai Kabsa Rice', img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'أرز تايلندي حبة طويلة للكبسة معقم ونظيف', ingredients_en: 'Thai kabsa rice 1 kg nylon packaging', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'رز بسمتي سيلا 1121 هندي ذهبي', name_en: 'Indian Sella 1121 Basmati Rice (Golden)', img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'أرز بسمتي سيلا 1121 ذهبي هندي حبة طويلة جداً فاخر', ingredients_en: 'Basmati rice Sella 1121 Golden (Golden) 1 kg nylon packaging', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'رز بسمتي هندي كريمي طويل الحبة', name_en: 'Indian Creamy Basmati Rice', img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'أرز بسمتي هندي كريمي طويل الحبة نخب أول', ingredients_en: 'Indian long grain basmati Creamy rice 1 kg', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' },
+                    { name_ar: 'أرز إسباني', name_en: 'Spanish Rice', img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=80', packaging_ar: 'كيس نايلون', packaging_en: 'Nylon Bag', weight_ar: '1 كغ', weight_en: '1kg', ingredients_ar: 'أرز إسباني حبة طويلة فاخر للطهي والبايلية', ingredients_en: 'Spanish long grain luxury rice', storage_ar: 'يحفظ في مكان جاف وبارد', storage_en: 'Store in a cool dry place' }
                 ]
             }
         };
 
         // Current open brand tracker
         let currentBrandId = null;
+        let currentProductIndex = null;
 
         function openBrandPage(brandId) {
             const data = brandData[brandId];
@@ -1632,7 +1845,7 @@
 
             // Setup Labels
             document.getElementById('backToHomeBrandLabel').textContent = isAr ? 'العودة للصفحة الرئيسية' : 'Back to Home';
-            document.getElementById('brandProductsLabel').textContent = isAr ? 'جميع منتجات الوكالة' : 'All Agency Products';
+            document.getElementById('brandProductsLabel').textContent = isAr ? 'جميع منتجات الماركة' : 'All Brand Products';
 
             // Construct Brand Banner
             const banner = document.getElementById('brandBanner');
@@ -1662,16 +1875,16 @@
             const grid = document.getElementById('brandProductsGrid');
             grid.innerHTML = data.products.map((p, index) => `
                 <div onclick="openProductDetail('${brandId}', ${index})" class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#B8860B]/30 transition-all duration-300 group cursor-pointer transform hover:-translate-y-2">
-                    <div class="overflow-hidden h-56 relative bg-slate-50 p-6 flex items-center justify-center">
+                    <div class="overflow-hidden h-56 relative bg-slate-50 flex items-center justify-center">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent z-10 pointer-events-none"></div>
-                        <img src="${p.img}" class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-lg z-0" alt="${p.name_en}">
+                        <img src="${p.img}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 drop-shadow-lg z-0" alt="${p.name_en}">
                     </div>
                     <div class="p-5 text-center">
                         <h4 class="font-bold text-slate-800 text-lg mb-1">${isAr ? p.name_ar : p.name_en}</h4>
                         <p class="text-sm text-emerald-600 font-semibold mb-3">${isAr ? p.weight_ar : p.weight_en}</p>
                         <div class="inline-flex items-center gap-2 text-sm text-slate-500 group-hover:text-[#B8860B] transition-colors">
                             <span data-ar="عرض التفاصيل" data-en="View Details">${isAr ? 'عرض التفاصيل' : 'View Details'}</span>
-                            <i class="fas fa-arrow-left rtl:rotate-180"></i>
+                            <i class="fas ${isAr ? 'fa-arrow-left' : 'fa-arrow-right'}"></i>
                         </div>
                     </div>
                 </div>
@@ -1684,7 +1897,7 @@
             currentBrandId = null;
             setTimeout(() => {
                 const section = document.getElementById('products');
-                if(section) section.scrollIntoView({ behavior: 'smooth' });
+                if (section) section.scrollIntoView({ behavior: 'smooth' });
                 else window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 50);
         }
@@ -1693,6 +1906,8 @@
         function openProductDetail(brandId, productIndex) {
             const data = brandData[brandId];
             if (!data) return;
+            currentBrandId = brandId;
+            currentProductIndex = productIndex;
             const product = data.products[productIndex];
             const isAr = document.documentElement.dir === 'rtl';
 
@@ -1700,17 +1915,17 @@
             document.getElementById('brandPageView').classList.add('hidden');
             const pageView = document.getElementById('productPageView');
             pageView.classList.remove('hidden');
-            
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
             // Populate Product Data
             document.getElementById('pageImg').src = product.img;
-            
+
             document.getElementById('pageCategory').textContent = isAr ? data.title_ar : data.title_en;
             document.getElementById('pageTitle').textContent = isAr ? product.name_ar : product.name_en;
-            
+
             // Generate a professional description based on the name
-            const desc = isAr ? 
+            const desc = isAr ?
                 `نقدم لكم ${product.name_ar} من ${data.title_ar}، حيث الجودة تلتقي بالطعم الأصيل. يتم اختيار منتجاتنا بعناية فائقة لتضمن لكم تجربة فريدة ومتميزة على مائدتكم.` :
                 `Introducing ${product.name_en} from ${data.title_en}, where quality meets authentic taste. Our products are carefully selected to ensure a unique and premium experience on your table.`;
             document.getElementById('pageDescription').textContent = desc;
@@ -1721,7 +1936,7 @@
             document.getElementById('pageStorage').textContent = isAr ? product.storage_ar : product.storage_en;
 
             // Setup Labels for Language Switching within Page
-            document.getElementById('backToHomeLabel').textContent = isAr ? 'العودة لوكالة ' + data.title_ar.replace('وكالة ', '') : 'Back to ' + data.title_en.replace(' Agency', '');
+            document.getElementById('backToHomeLabel').textContent = isAr ? 'العودة لماركة ' + data.title_ar.replace('ماركة ', '') : 'Back to ' + data.title_en.replace(' Brand', '');
             document.getElementById('pagePackagingLabel').textContent = isAr ? 'التعبئة' : 'Packaging';
             document.getElementById('pageWeightLabel').textContent = isAr ? 'الوزن' : 'Weight';
             document.getElementById('pageIngredientsLabel').textContent = isAr ? 'المكونات' : 'Ingredients';
@@ -1731,8 +1946,8 @@
             document.getElementById('relatedLabel').textContent = isAr ? 'منتجات ذات صلة' : 'Related Products';
 
             // Configure WhatsApp Button
-            const whatsappMsg = isAr ? 
-                `مرحباً، أرغب بالاستفسار عن منتج: ${product.name_ar} (${data.title_ar})` : 
+            const whatsappMsg = isAr ?
+                `مرحباً، أرغب بالاستفسار عن منتج: ${product.name_ar} (${data.title_ar})` :
                 `Hello, I would like to inquire about: ${product.name_en} (${data.title_en})`;
             const whatsappNumber = "+963900000000"; // Replace with real number
             document.getElementById('pageWhatsappBtn').href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMsg)}`;
@@ -1741,13 +1956,13 @@
             // Limit to 4 related products for layout
             const relatedGrid = document.getElementById('relatedProductsGrid');
             const relatedProducts = data.products.map((p, idx) => ({ p, idx })).filter(item => item.idx !== productIndex).slice(0, 4);
-            
+
             const relatedHTML = relatedProducts.map(item => {
                 const p = item.p;
                 return `
                 <div onclick="openProductDetail('${brandId}', ${item.idx})" class="bg-white rounded-2xl overflow-hidden shadow border border-slate-100 hover:shadow-xl transition group cursor-pointer transform hover:-translate-y-2 flex flex-col h-full">
-                    <div class="h-40 relative bg-slate-50 p-4 flex items-center justify-center shrink-0">
-                        <img src="${p.img}" class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow" alt="${p.name_en}">
+                    <div class="h-40 relative bg-slate-50 flex items-center justify-center shrink-0">
+                        <img src="${p.img}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 drop-shadow" alt="${p.name_en}">
                     </div>
                     <div class="p-5 text-center flex flex-col justify-center grow">
                         <h4 class="font-bold text-slate-800 text-lg mb-1">${isAr ? p.name_ar : p.name_en}</h4>
@@ -1755,8 +1970,8 @@
                     </div>
                 </div>`;
             }).join('');
-            
-            relatedGrid.innerHTML = relatedHTML || `<p class="text-slate-500 col-span-full">${isAr ? 'لا توجد منتجات أخرى في هذه الوكالة' : 'No other products in this agency'}</p>`;
+
+            relatedGrid.innerHTML = relatedHTML || `<p class="text-slate-500 col-span-full">${isAr ? 'لا توجد منتجات أخرى في هذه الماركة' : 'No other products in this brand'}</p>`;
         }
 
         function closeProductPage() {
@@ -1801,6 +2016,21 @@
                     else if (imgM.classList.contains('flex')) closeImage();
                     else if (catM && !catM.classList.contains('hidden')) closeCategoryModal();
                 }
+            });
+
+            // Automatically close subpages (Brand/Product) when any section link is clicked
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    if (!document.getElementById('brandPageView').classList.contains('hidden') ||
+                        !document.getElementById('productPageView').classList.contains('hidden')) {
+
+                        document.getElementById('brandPageView').classList.add('hidden');
+                        document.getElementById('productPageView').classList.add('hidden');
+                        document.getElementById('mainPageView').classList.remove('hidden');
+                        currentBrandId = null;
+                        currentProductIndex = null;
+                    }
+                });
             });
 
             // Scroll Spy for Navigation Links
